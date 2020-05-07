@@ -12,7 +12,19 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ba18FwSlOHGcf1Hwhk6i46iybS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -58,5 +70,9 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1085" y="229" key="#com.intellij.ide.util.MemberChooser/-1680.33.1344.808/0.0.2560.1040@0.0.2560.1040" timestamp="1588855546415" />
+    <state x="1019" y="311" key="git4idea.merge.GitPullDialog" timestamp="1588856310878">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1019" y="311" key="git4idea.merge.GitPullDialog/-1680.33.1344.808/0.0.2560.1040@0.0.2560.1040" timestamp="1588856310878" />
   </component>
 </project>
