@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Stop {
     private String id;
+
     @SerializedName("coordinates")
     private Coordinate coordinate;
 
