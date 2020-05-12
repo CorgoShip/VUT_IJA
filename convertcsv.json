@@ -1,0 +1,685 @@
+{
+   "stops": [
+      {
+         "id": "Stop0",
+         "coordinates": {
+            "x": 302.9753600064946,
+            "y": 354.15980964940564
+         }
+      },
+      {
+         "id": "Stop1",
+         "coordinates": {
+            "x": 290.83698203308654,
+            "y": 364.9378521602766
+         }
+      },
+      {
+         "id": "Stop2",
+         "coordinates": {
+            "x": 438.59317097238517,
+            "y": 289.7287993189573
+         }
+      },
+      {
+         "id": "Stop3",
+         "coordinates": {
+            "x": 412.1814095535349,
+            "y": 282.1100219865966
+         }
+      },
+      {
+         "id": "Stop4",
+         "coordinates": {
+            "x": 557.8446828644799,
+            "y": 337.82795616902047
+         }
+      },
+      {
+         "id": "Stop5",
+         "coordinates": {
+            "x": 547.0659643369611,
+            "y": 321.10235845390514
+         }
+      },
+      {
+         "id": "Stop6",
+         "coordinates": {
+            "x": 611.8893410371845,
+            "y": 468.1694324524023
+         }
+      },
+      {
+         "id": "Stop7",
+         "coordinates": {
+            "x": 632.3247878006911,
+            "y": 456.9220160166739
+         }
+      },
+      {
+         "id": "Stop8",
+         "coordinates": {
+            "x": 380.0269588455186,
+            "y": 446.5825648223337
+         }
+      },
+      {
+         "id": "Stop9",
+         "coordinates": {
+            "x": 477.59203165905353,
+            "y": 509.36356819799965
+         }
+      },
+      {
+         "id": "Stop10",
+         "coordinates": {
+            "x": 264.0067649836933,
+            "y": 411.97970504892004
+         }
+      },
+      {
+         "id": "Stop11",
+         "coordinates": {
+            "x": 233.11293154464417,
+            "y": 598.7816239614205
+         }
+      },
+      {
+         "id": "Stop12",
+         "coordinates": {
+            "x": 478.2547601434581,
+            "y": 556.2045722571435
+         }
+      },
+      {
+         "id": "Stop13",
+         "coordinates": {
+            "x": 520.1556771246426,
+            "y": 637.2540151362589
+         }
+      },
+      {
+         "id": "Stop14",
+         "coordinates": {
+            "x": 635.0870118003105,
+            "y": 499.26306965236023
+         }
+      },
+      {
+         "id": "Stop15",
+         "coordinates": {
+            "x": 267.7566820397193,
+            "y": 378.3628562905309
+         }
+      },
+      {
+         "id": "Stop16",
+         "coordinates": {
+            "x": 104.11387604074483,
+            "y": 433.62333937204886
+         }
+      },
+      {
+         "id": "Stop17",
+         "coordinates": {
+            "x": 71.30280079586885,
+            "y": 278.6122408888676
+         }
+      },
+      {
+         "id": "Stop18",
+         "coordinates": {
+            "x": 355.83378443619927,
+            "y": 177.9352309837899
+         }
+      },
+      {
+         "id": "Stop19",
+         "coordinates": {
+            "x": 388.9195633316925,
+            "y": 255.40367698375525
+         }
+      },
+      {
+         "id": "Stop20",
+         "coordinates": {
+            "x": 535.1933824290716,
+            "y": 157.00002152593632
+         }
+      },
+      {
+         "id": "Stop21",
+         "coordinates": {
+            "x": 579.3250052957469,
+            "y": 243.50854894855206
+         }
+      },
+      {
+         "id": "Stop22",
+         "coordinates": {
+            "x": 749.7920136594009,
+            "y": 247.05235349196215
+         }
+      },
+      {
+         "id": "Stop23",
+         "coordinates": {
+            "x": 705.028936809227,
+            "y": 342.69193413766163
+         }
+      },
+      {
+         "id": "Stop24",
+         "coordinates": {
+            "x": 771.1582943734875,
+            "y": 441.7154591830234
+         }
+      },
+      {
+         "id": "Stop25",
+         "coordinates": {
+            "x": 720.3651961912342,
+            "y": 565.8572482904862
+         }
+      }
+   ],
+   "streets": [
+      {
+         "name": "Barker Wood",
+         "stops": [
+            {
+               "id": "exception",
+               "coordinates": {
+                  "x": 302.9753600064946,
+                  "y": 354.15980964940564
+               }
+            },
+            {
+               "id": "railcar",
+               "coordinates": {
+                  "x": 290.83698203308654,
+                  "y": 364.9378521602766
+               }
+            }
+         ],
+         "from": {
+            "x": 275,
+            "y": 379
+         },
+         "to": {
+            "x": 391,
+            "y": 276
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Ryecroft Leaze",
+         "stops": [
+            {
+               "id": "simplicity",
+               "coordinates": {
+                  "x": 438.59317097238517,
+                  "y": 289.7287993189573
+               }
+            },
+            {
+               "id": "ambiguous",
+               "coordinates": {
+                  "x": 412.1814095535349,
+                  "y": 282.1100219865966
+               }
+            }
+         ],
+         "from": {
+            "x": 391,
+            "y": 276
+         },
+         "to": {
+            "x": 547,
+            "y": 321
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Grantham Orchards",
+         "stops": [
+            {
+               "id": "driver",
+               "coordinates": {
+                  "x": 557.8446828644799,
+                  "y": 337.82795616902047
+               }
+            },
+            {
+               "id": "exotic",
+               "coordinates": {
+                  "x": 547.0659643369611,
+                  "y": 321.10235845390514
+               }
+            }
+         ],
+         "from": {
+            "x": 547,
+            "y": 321
+         },
+         "to": {
+            "x": 634,
+            "y": 456
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Railway Gardens",
+         "stops": [
+            {
+               "id": "gregarious",
+               "coordinates": {
+                  "x": 611.8893410371845,
+                  "y": 468.1694324524023
+               }
+            },
+            {
+               "id": "soprano",
+               "coordinates": {
+                  "x": 632.3247878006911,
+                  "y": 456.9220160166739
+               }
+            }
+         ],
+         "from": {
+            "x": 634,
+            "y": 456
+         },
+         "to": {
+            "x": 505,
+            "y": 527
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Heywood Common",
+         "stops": [
+            {
+               "id": "flower",
+               "coordinates": {
+                  "x": 380.0269588455186,
+                  "y": 446.5825648223337
+               }
+            },
+            {
+               "id": "groan",
+               "coordinates": {
+                  "x": 477.59203165905353,
+                  "y": 509.36356819799965
+               }
+            }
+         ],
+         "from": {
+            "x": 505,
+            "y": 527
+         },
+         "to": {
+            "x": 275,
+            "y": 379
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Grantham Causeway",
+         "stops": [
+            {
+               "id": "help",
+               "coordinates": {
+                  "x": 264.0067649836933,
+                  "y": 411.97970504892004
+               }
+            }
+         ],
+         "from": {
+            "x": 275,
+            "y": 379
+         },
+         "to": {
+            "x": 203,
+            "y": 595
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Atkinson Springs",
+         "stops": [
+            {
+               "id": "distant",
+               "coordinates": {
+                  "x": 233.11293154464417,
+                  "y": 598.7816239614205
+               }
+            }
+         ],
+         "from": {
+            "x": 203,
+            "y": 595
+         },
+         "to": {
+            "x": 418,
+            "y": 622
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "King Edward Willows",
+         "stops": [
+            {
+               "id": "echo",
+               "coordinates": {
+                  "x": 478.2547601434581,
+                  "y": 556.2045722571435
+               }
+            }
+         ],
+         "from": {
+            "x": 418,
+            "y": 622
+         },
+         "to": {
+            "x": 505,
+            "y": 527
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Dereham Walk",
+         "stops": [
+            {
+               "id": "center",
+               "coordinates": {
+                  "x": 520.1556771246426,
+                  "y": 637.2540151362589
+               }
+            }
+         ],
+         "from": {
+            "x": 418,
+            "y": 622
+         },
+         "to": {
+            "x": 639,
+            "y": 655
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Mulberry Dale",
+         "stops": [
+            {
+               "id": "shoulder",
+               "coordinates": {
+                  "x": 635.0870118003105,
+                  "y": 499.26306965236023
+               }
+            }
+         ],
+         "from": {
+            "x": 639,
+            "y": 655
+         },
+         "to": {
+            "x": 634,
+            "y": 456
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Riley Grange",
+         "stops": [
+            {
+               "id": "gate",
+               "coordinates": {
+                  "x": 267.7566820397193,
+                  "y": 378.3628562905309
+               }
+            }
+         ],
+         "from": {
+            "x": 275,
+            "y": 379
+         },
+         "to": {
+            "x": 59,
+            "y": 360
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Tresillian Road",
+         "stops": [
+            {
+               "id": "rational",
+               "coordinates": {
+                  "x": 104.11387604074483,
+                  "y": 433.62333937204886
+               }
+            }
+         ],
+         "from": {
+            "x": 59,
+            "y": 360
+         },
+         "to": {
+            "x": 203,
+            "y": 595
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Blane Street",
+         "stops": [
+            {
+               "id": "disappear",
+               "coordinates": {
+                  "x": 71.30280079586885,
+                  "y": 278.6122408888676
+               }
+            }
+         ],
+         "from": {
+            "x": 59,
+            "y": 360
+         },
+         "to": {
+            "x": 85,
+            "y": 188
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Miller Meadow Close",
+         "stops": [
+            {
+               "id": "priority",
+               "coordinates": {
+                  "x": 355.83378443619927,
+                  "y": 177.9352309837899
+               }
+            }
+         ],
+         "from": {
+            "x": 85,
+            "y": 188
+         },
+         "to": {
+            "x": 381,
+            "y": 177
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Lyndale Hawthorns",
+         "stops": [
+            {
+               "id": "cutting",
+               "coordinates": {
+                  "x": 388.9195633316925,
+                  "y": 255.40367698375525
+               }
+            }
+         ],
+         "from": {
+            "x": 381,
+            "y": 177
+         },
+         "to": {
+            "x": 391,
+            "y": 276
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Holt Wharf",
+         "stops": [
+            {
+               "id": "clearance",
+               "coordinates": {
+                  "x": 535.1933824290716,
+                  "y": 157.00002152593632
+               }
+            }
+         ],
+         "from": {
+            "x": 381,
+            "y": 177
+         },
+         "to": {
+            "x": 620,
+            "y": 146
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Marigold Row",
+         "stops": [
+            {
+               "id": "information",
+               "coordinates": {
+                  "x": 579.3250052957469,
+                  "y": 243.50854894855206
+               }
+            }
+         ],
+         "from": {
+            "x": 620,
+            "y": 146
+         },
+         "to": {
+            "x": 547,
+            "y": 321
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Atkinson Warren",
+         "stops": [
+            {
+               "id": "dramatic",
+               "coordinates": {
+                  "x": 749.7920136594009,
+                  "y": 247.05235349196215
+               }
+            }
+         ],
+         "from": {
+            "x": 620,
+            "y": 146
+         },
+         "to": {
+            "x": 760,
+            "y": 255
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Andover Rise",
+         "stops": [
+            {
+               "id": "test",
+               "coordinates": {
+                  "x": 705.028936809227,
+                  "y": 342.69193413766163
+               }
+            }
+         ],
+         "from": {
+            "x": 760,
+            "y": 255
+         },
+         "to": {
+            "x": 634,
+            "y": 456
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Arran Copse",
+         "stops": [
+            {
+               "id": "creed",
+               "coordinates": {
+                  "x": 771.1582943734875,
+                  "y": 441.7154591830234
+               }
+            }
+         ],
+         "from": {
+            "x": 760,
+            "y": 255
+         },
+         "to": {
+            "x": 775,
+            "y": 506
+         },
+         "closed": false,
+         "traffic": 0
+      },
+      {
+         "name": "Hamadryad Road",
+         "stops": [
+            {
+               "id": "convert",
+               "coordinates": {
+                  "x": 720.3651961912342,
+                  "y": 565.8572482904862
+               }
+            }
+         ],
+         "from": {
+            "x": 775,
+            "y": 506
+         },
+         "to": {
+            "x": 639,
+            "y": 655
+         },
+         "closed": false,
+         "traffic": 0
+      }
+   ]
+}

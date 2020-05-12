@@ -2,15 +2,15 @@ package classes;
 
 public class Coordinate {
 
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
-    public Coordinate(int x0, int y0){
+    public Coordinate(double x0, double y0){
         x = x0;
         y = y0;
     }
 
-    public static Coordinate create(int x, int y){
+    public static Coordinate create(double x, double y){
         if(x >= 0 && y >= 0){
             Coordinate temp = new Coordinate(x,y);
             return temp;
@@ -18,21 +18,21 @@ public class Coordinate {
         return null;
     }
 
-    public int diffX(Coordinate c)
+    public double diffX(Coordinate c)
     {
         return this.x - c.x;
     }
 
-    public int diffY(Coordinate c)
+    public double diffY(Coordinate c)
     {
         return this.y - c.y;
     }
 
-    public int getX() {
+    public double getX() {
         return this.x;
     }
 
-    public int getY() {
+    public double getY() {
         return this.y;
     }
 
@@ -50,11 +50,16 @@ public class Coordinate {
     }
 
     @Override
-    public int hashCode()
+    public int hashCode() // tady nevim uplne jak to bude fungovat
     {
         int result = 31;
-        result = result * this.getX();
-        result = result * 31 + this.getY();
+        result = result * (int)this.getX();
+        result = result * 31 + (int)this.getY();
         return result;
+    }
+
+    public void printAll()
+    {
+        System.out.println("x:" + this.x + "y:" + this.y );
     }
 }
