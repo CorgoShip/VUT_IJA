@@ -40,24 +40,27 @@ public class Vehicle implements Drawable, Movable{
 
         if(lenght <= 5)
         {
-            return;
+            this.position.setX(this.position.getY() + dx);
+            this.position.setY(this.position.getY() + dy);
+
+            for (Shape item: gui)
+            {
+                item.setTranslateX(dx + item.getTranslateX());
+                item.setTranslateY(dy + item.getTranslateY());
+            }
         }
+        else
+         {
+             double part = 5 / lenght;
 
-        double part = 5 / lenght;
+             this.position.setX(this.position.getX() + dx * part);
+             this.position.setY(this.position.getY() + dy * part);
 
-        this.position.setX(this.position.getX() + dx*part);
-        this.position.setX(this.position.getX() + dy*part);
-
-        for (Shape item: gui)
-        {
-            //System.out.println("------------");
-            //System.out.println(dx);
-            //System.out.println(dy);
-            System.out.println(item.getTranslateX());
-            System.out.println(item.getTranslateY());
-            item.setTranslateX(dx *part + item.getTranslateX());
-            item.setTranslateY(dy * part + item.getTranslateX());
-        }
-
+             for (Shape item: gui)
+             {
+                 item.setTranslateX(dx * part + item.getTranslateX());
+                 item.setTranslateY(dy * part + item.getTranslateY());
+             }
+         }
     }
 }
