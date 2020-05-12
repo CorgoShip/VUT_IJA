@@ -29,19 +29,18 @@ public class Main extends Application {
         //Street list imported form json file
         ArrayList<Street> ourStreets = data.getStreets();
 
-        //adding items to scene
+        //adding vehicles to scene
         LayoutController controller = loader.getController();
-        controller.setItems(Arrays.asList(new Vehicle(new Coordinate(100,100),"10")));
+        controller.setVehicles(Arrays.asList(new Vehicle(new Coordinate(200,200),"200"),new Vehicle(new Coordinate(100,100),"100")));
 
-        for (Street item : ourStreets)
-        {
-            item.printAll();
-        }
-
+        //adding streets to scene
         for (Drawable item : ourStreets)
         {
-            controller.setItems(Arrays.asList(item));
+            controller.setStreets(Arrays.asList(item));
         }
+
+        //Starting timer
+        controller.startTime();
 
         //System.out.println(data.getStreets());
 
