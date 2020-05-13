@@ -1,10 +1,11 @@
 import classes.Drawable;
 import classes.Movable;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
 import jdk.vm.ci.meta.Local;
-
 import java.sql.Time;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -19,6 +20,9 @@ public class LayoutController {
     private Timer timer;
     private LocalTime time = new Time(6,0,0).toLocalTime();
     private int rate = 1;
+
+    @FXML
+    private TextField speed;
 
     @FXML
     private Pane map;
@@ -37,6 +41,20 @@ public class LayoutController {
         {
             map.setScaleX(map.getScaleX()*0.8);
             map.setScaleY(map.getScaleY()*0.8);
+        }
+    }
+
+    @FXML
+    private void onSpeedChange()
+    {
+        try {
+            double speed_d = Double.parseDouble(speed.getText());
+            timer.cancel();
+            startTime(speed_d);
+        } catch (Exception e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Zadejte cislo v rozsahu 0 - 1000");
+            alert.showAndWait();
         }
     }
 
@@ -60,7 +78,7 @@ public class LayoutController {
         }
     }
 
-    public void startTime()
+    public void startTime(double speed)
     {
         timer = new Timer(false);
         timer.scheduleAtFixedRate(new TimerTask(){
@@ -77,6 +95,6 @@ public class LayoutController {
                 }
 
             }
-        },0,1000);
+        },0, (long) (1000 / speed));
     }
 }
