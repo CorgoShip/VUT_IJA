@@ -1,0 +1,123 @@
+{
+  "points": [
+    {
+      "coordinate": {
+        "x": 71.30280079586885,
+        "y": 278.6122408888676
+      },
+      "zastavit": false
+    },
+    {
+      "coordinate": {
+        "x": 85.0,
+        "y": 188.0
+      },
+      "zastavit": false
+    },
+    {
+      "coordinate": {
+        "x": 355.83378443619927,
+        "y": 177.9352309837899
+      },
+      "zastavit": true
+    },
+    {
+      "coordinate": {
+        "x": 381.0,
+        "y": 177.0
+      },
+      "zastavit": false
+    },
+    {
+      "coordinate": {
+        "x": 535.1933824290716,
+        "y": 157.00002152593632
+      },
+      "zastavit": true
+    },
+    {
+      "coordinate": {
+        "x": 620.0,
+        "y": 146.0
+      },
+      "zastavit": false
+    },
+    {
+      "coordinate": {
+        "x": 749.7920136594009,
+        "y": 247.05235349196215
+      },
+      "zastavit": true
+    },
+    {
+      "coordinate": {
+        "x": 760.0,
+        "y": 255.0
+      },
+      "zastavit": false
+    },
+    {
+      "coordinate": {
+        "x": 771.1582943734875,
+        "y": 441.7154591830234
+      },
+      "zastavit": true
+    },
+    {
+      "coordinate": {
+        "x": 755.0,
+        "y": 506.0
+      },
+      "zastavit": false
+    },
+    {
+      "coordinate": {
+        "x": 720.3651961912342,
+        "y": 565.8572482904862
+      },
+      "zastavit": true
+    },
+    {
+      "coordinate": {
+        "x": 639.0,
+        "y": 655.0
+      },
+      "zastavit": false
+    },
+    {
+      "coordinate": {
+        "x": 520.1556771246426,
+        "y": 637.2540151362589
+      },
+      "zastavit": true
+    },
+    {
+      "coordinate": {
+        "x": 418.0,
+        "y": 622.0
+      },
+      "zastavit": false
+    },
+    {
+      "coordinate": {
+        "x": 233.11293154464417,
+        "y": 598.7816239614205
+      },
+      "zastavit": true
+    },
+    {
+      "coordinate": {
+        "x": 203.0,
+        "y": 595.0
+      },
+      "zastavit": false
+    },
+    {
+      "coordinate": {
+        "x": 104.11387604074483,
+        "y": 433.62333937204886
+      },
+      "zastavit": false
+    }
+  ]
+}

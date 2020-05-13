@@ -24,7 +24,7 @@ public class Main extends Application {
         Reader reader = Files.newBufferedReader(Paths.get("convertcsv.json"));
         Gson gson = new Gson();
         Data data = gson.fromJson(reader, Data.class);
-        data.getStreets().forEach(System.out::println);
+        //data.getStreets().forEach(System.out::println);
 
         //Street list imported form json file
         ArrayList<Street> ourStreets = data.getStreets();
@@ -42,7 +42,30 @@ public class Main extends Application {
         //Starting timer
         controller.startTime();
 
+        Reader line1Reader = Files.newBufferedReader(Paths.get("line1.json"));
+        Line line1 = gson.fromJson(line1Reader, Line.class);
+        for (Point item : line1.getPoints())
+        {
+            item.print();
+        }
+        /*
+        Reader pointReader = Files.newBufferedReader(Paths.get("out.json"));
+        Point point = gson.fromJson(pointReader, Point.class);
+        point.print();
+        */
+
         //System.out.println(data.getStreets());
+
+        /*
+        Reader line1Reader = Files.newBufferedReader(Paths.get("line1.json"));
+        Line line1 = gson.fromJson(line1Reader, Line.class);
+
+        for (Point item : line1.getPoints())
+        {
+            item.print();
+        }
+        */
+
 
     }
 }

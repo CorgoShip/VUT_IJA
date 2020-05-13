@@ -66,6 +66,6 @@ public class Coordinate {
 
     public void printAll()
     {
-        System.out.println("x:" + this.x + "y:" + this.y );
+        System.out.println("x:" + this.x + " y:" + this.y );
     }
 }

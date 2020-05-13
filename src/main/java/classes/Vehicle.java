@@ -11,7 +11,7 @@ import java.util.List;
 public class Vehicle implements Drawable, Movable{
     private Coordinate position;
     private String id;
-    private List<Shape> gui;
+    private transient List<Shape> gui;
 
     public Vehicle(Coordinate p,String id)
     {
