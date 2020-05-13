@@ -39,7 +39,7 @@ public class Main extends Application {
 
         //adding vehicles to scene
         LayoutController controller = loader.getController();
-        controller.setVehicles(Arrays.asList(new Vehicle(new Coordinate(200,200),"200",line1)));
+        controller.setVehicles(Arrays.asList(new Vehicle(new Coordinate(71.30280079586885,278.6122408888676),"200",line1)));
 
         //adding streets to scene
         for (Drawable item : ourStreets)

@@ -42,6 +42,11 @@ public class Street implements Drawable{
         return traffic;
     }
 
+    public void setTraffic(double t)
+    {
+       this.traffic = t;
+    }
+
     public void printAll()
     {
         System.out.println(this.name);

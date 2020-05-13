@@ -3,7 +3,9 @@ import classes.Movable;
 import javafx.fxml.FXML;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
+import jdk.vm.ci.meta.Local;
 
+import java.sql.Time;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +17,7 @@ public class LayoutController {
     private List<Drawable> streets = new ArrayList<Drawable>();
     private List<Movable> vehicles = new ArrayList<>();
     private Timer timer;
-    private LocalTime time = LocalTime.now();
+    private LocalTime time = new Time(6,0,0).toLocalTime();
     private int rate = 1;
 
     @FXML
@@ -38,17 +40,19 @@ public class LayoutController {
         }
     }
 
-    public void setStreets(List<Drawable> streets)
+    public void setStreets(List<Drawable> streets2)
     {
-        this.streets = streets;
-        for(Drawable item : this.streets)
+        this.streets .add(streets2.get(0));
+        for(Drawable item : streets2)
         {
             map.getChildren().addAll(item.getGui());
         }
+
     }
 
     public void setVehicles(List<Movable> vehicles)
     {
+        //TODO: upravit na add pokud bysme vozidla prifavali ve for cklyu po jednom
         this.vehicles = vehicles;
         for(Movable item : this.vehicles)
         {
@@ -68,7 +72,7 @@ public class LayoutController {
                 //move all vehicles
                 for (Movable item : vehicles)
                 {
-                    item.move();
+                    item.move(time, streets);
                     //System.out.println(item);
                 }
 
