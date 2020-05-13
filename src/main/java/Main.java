@@ -29,9 +29,17 @@ public class Main extends Application {
         //Street list imported form json file
         ArrayList<Street> ourStreets = data.getStreets();
 
+        //loading lines
+        Reader line1Reader = Files.newBufferedReader(Paths.get("line1.json"));
+        Line line1 = gson.fromJson(line1Reader, Line.class);
+        for (Point item : line1.getPoints())
+        {
+            item.print();
+        }
+
         //adding vehicles to scene
         LayoutController controller = loader.getController();
-        controller.setVehicles(Arrays.asList(new Vehicle(new Coordinate(200,200),"200"),new Vehicle(new Coordinate(100,100),"100")));
+        controller.setVehicles(Arrays.asList(new Vehicle(new Coordinate(200,200),"200",line1)));
 
         //adding streets to scene
         for (Drawable item : ourStreets)
@@ -42,12 +50,6 @@ public class Main extends Application {
         //Starting timer
         controller.startTime();
 
-        Reader line1Reader = Files.newBufferedReader(Paths.get("line1.json"));
-        Line line1 = gson.fromJson(line1Reader, Line.class);
-        for (Point item : line1.getPoints())
-        {
-            item.print();
-        }
         /*
         Reader pointReader = Files.newBufferedReader(Paths.get("out.json"));
         Point point = gson.fromJson(pointReader, Point.class);

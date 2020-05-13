@@ -4,6 +4,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Shape;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.util.ArrayList;
@@ -65,10 +66,39 @@ public class Street implements Drawable{
         for (Stop item : stops)
         {
             tmp.add(new Circle(item.getCoordinate().getX(),item.getCoordinate().getY(),5, Color.GRAY));
-            tmp.add(new Text(item.getCoordinate().getX()+4,item.getCoordinate().getY()+3,item.getId()));
+            Text text = new Text(item.getCoordinate().getX()-30,item.getCoordinate().getY()-6,item.getId());
+            text.setFont(new Font(8));
+            tmp.add(text);
         }
 
-        tmp.add(new Text((this.getFrom().getX() + this.getTo().getX())/2,(this.getFrom().getY()+this.getTo().getY())/2,this.getName()));
+        Text text = new Text((this.getFrom().getX() + this.getTo().getX())/2 - (this.getName().length()*3),((this.getFrom().getY()+this.getTo().getY())/2) -4,this.getName());
+/**
+        double angle = Math.atan2(this.getFrom().getY() - this.getTo().getY(), this.getFrom().getX() - this.getTo().getX());
+        angle = angle * 180 /  Math.PI ;
+        //text.setRotate(angle);
+
+        if (angle < 90)
+        {
+            text.setRotate(angle + 180);
+            text.setX(text.getX() + 5);
+
+        }
+        else if (angle < 180)
+        {
+            text.setRotate(-(180-angle));
+        }
+        else if (angle < 270)
+        {
+            text.setRotate(angle - 180);
+        }
+        else
+        {
+            text.setRotate(-(360-angle));
+            System.out.println(this.getName());
+        }
+*/
+        text.setFont(new Font(12));
+        tmp.add(text);
 
         return tmp;
     }
