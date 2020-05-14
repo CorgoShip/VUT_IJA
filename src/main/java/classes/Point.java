@@ -20,6 +20,8 @@ public class Point {
         return streetId;
     }
 
+    public String getCasOdjezdu() {return casOdjezdu; }
+
     public void print()
     {
         this.coordinate.printAll();

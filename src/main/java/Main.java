@@ -32,7 +32,6 @@ public class Main extends Application {
 
         //inicialization of controller
         LayoutController controller = loader.getController();
-        controller.init();
 
         //Street list imported form json file
         ArrayList<Street> ourStreets = data.getStreets();
@@ -50,54 +49,6 @@ public class Main extends Application {
             controller.setStreets(Arrays.asList(item));
         }
 
-        //Starting timer
-        controller.addToList("a");
-        controller.addToList("b");
-        controller.addToList("c");
-
-
-
-
-
-
-        /*
-        Reader pointReader = Files.newBufferedReader(Paths.get("out.json"));
-        Point point = gson.fromJson(pointReader, Point.class);
-        point.print();
-        */
-
-        //System.out.println(data.getStreets());
-
-        /*
-        Reader line1Reader = Files.newBufferedReader(Paths.get("line1.json"));
-        Line line1 = gson.fromJson(line1Reader, Line.class);
-
-        for (Point item : line1.getPoints())
-        {
-            item.print();
-        }
-
-        /*
-        line1.setId("line1");
-        line1.addVehicle("10");
-        line1.addVehicle("11");
-        line1.addVehicle("12");
-        line1.addVehicle("13");
-        line1.addVehicle("14");
-        line1.addVehicle("15");
-        line1.addVehicle("16");
-        line1.addVehicle("17");
-        line1.addVehicle("18");
-        line1.addVehicle("19");
-        */
-
-        //Point point = new Point(new Coordinate(12, 41), true, "Random", Time.valueOf("06:04:12"));
-        Gson bson = new GsonBuilder().setPrettyPrinting().create();
-        String pointS = bson.toJson(line1);
-
-        try (PrintWriter out = new PrintWriter("linecka1.json"))
-        {
-            out.println(pointS);
-        }
+        controller.init();
     }
 }

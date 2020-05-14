@@ -36,7 +36,21 @@ public class Vehicle implements Movable{
     }
 
     @Override
-    public boolean move(LocalTime time,List<Drawable> streets) {
+    public synchronized boolean move(LocalTime time,List<Drawable> streets) {
+/**
+        if(this.position == null)
+        {
+            LocalTime firstPointTime = LocalTime.parse(this.line.getPoints().get(0).getCasOdjezdu());
+            if(time.compareTo(firstPointTime) == 0)
+            {
+                this.position = new Coordinate(line.getPoints().get(0).getCoordinate().getX(),line.getPoints().get(0).getCoordinate().getY());
+            }
+            return true;
+        }
+*/
+
+
+
         //zjistim na ktere jsem ulici
         //Drawable street = this.getStreet(streets);
 

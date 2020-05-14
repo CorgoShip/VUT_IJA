@@ -42,28 +42,6 @@ public class Coordinate {
 
     public void setY(double y) { this.y = y; }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-
-        if (obj == null || obj.getClass() != this.getClass()) {
-            return false;
-        }
-
-        return this.hashCode() == obj.hashCode();
-    }
-
-    @Override
-    public int hashCode() // tady nevim uplne jak to bude fungovat
-    {
-        int result = 31;
-        result = result * (int)this.getX();
-        result = result * 31 + (int)this.getY();
-        return result;
-    }
-
     public void printAll()
     {
         System.out.println("x:" + this.x + " y:" + this.y );
