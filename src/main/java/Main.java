@@ -52,3 +52,4 @@ public class Main extends Application {
         controller.init();
     }
 }
+

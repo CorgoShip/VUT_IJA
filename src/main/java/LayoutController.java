@@ -188,9 +188,14 @@ public class LayoutController {
                 double part = timeTraveled/timeDifference;
 
                 return new Coordinate(prev.getCoordinate().getX() + dx*part,prev.getCoordinate().getY()+dy*part);
+<<<<<<< HEAD
 
             }
             */
+=======
+                 */
+            }
+>>>>>>> 7119b71290726bdbb174f7b19b76dbddfd248f6e
             //prev = point;
             //prevTime = pointTime;
         }
