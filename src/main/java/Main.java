@@ -41,18 +41,8 @@ public class Main extends Application {
         //TODO: tady by asi bylo idelani kdyby to vracelo list linek
         Reader line1Reader = Files.newBufferedReader(Paths.get("line1.json"));
         Line line1 = gson.fromJson(line1Reader, Line.class);
+        controller.setLines(Arrays.asList(line1));
 
-
-
-        /**
-        for (Point item : line1.getPoints())
-        {
-            item.print();
-        }
-         */
-
-        //adding vehicles to scene
-        controller.setVehicles(Arrays.asList(new Vehicle(new Coordinate(71.30280079586885,278.6122408888676),"200",line1)));
 
         //adding streets to scene
         for (Drawable item : ourStreets)

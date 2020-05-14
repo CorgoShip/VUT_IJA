@@ -21,7 +21,8 @@
          <children>
             <TextField fx:id="speed" layoutX="69.0" layoutY="562.0" prefHeight="25.0" prefWidth="84.0" promptText="Rychlost simulace" />
             <Button layoutX="153.0" layoutY="562.0" mnemonicParsing="false" onAction="#onSpeedChange" text="Set" />
-            <ListView fx:id="lineList" layoutY="-1.0" prefHeight="379.0" prefWidth="200.0" />
+            <ListView fx:id="lineList" layoutY="-1.0" onMouseClicked="#onMouseclicked" prefHeight="205.0" prefWidth="200.0" />
+            <ListView fx:id="vehicleList" layoutY="227.0" onMouseClicked="#onMouseclicked" prefHeight="200.0" prefWidth="200.0" />
          </children></AnchorPane>
    </right>
 </BorderPane>
