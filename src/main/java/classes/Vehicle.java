@@ -48,11 +48,8 @@ public class Vehicle implements Movable{
             return true;
         }
 */
-
-
-
         //zjistim na ktere jsem ulici
-        //Drawable street = this.getStreet(streets);
+        Drawable street = this.getStreet(streets);
 
         //ziskam bod ke kteremu mam prave jet
         if(currentLine.getPoints().isEmpty())
@@ -72,7 +69,7 @@ public class Vehicle implements Movable{
         if(lenght <= speed)
         {
 
-            //System.out.println( + time);
+            System.out.println( street + " " + time);
 
             //odstranim bod ke ktermu jsem prave prijel
             currentLine.getPoints().remove(0);

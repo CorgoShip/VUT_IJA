@@ -8,7 +8,7 @@
       },
       "zastavka": false,
       "streetId": "Blane Street",
-      "casOdjezdu": "06:00:00"
+      "casOdjezdu": "06:00:01"
     },
     {
       "coordinate": {
@@ -16,7 +16,8 @@
         "y": 188.0
       },
       "zastavka": false,
-      "streetId": "Miller Meadow Close"
+      "streetId": "Miller Meadow Close",
+      "casOdjezdu": "06:01:32"
     },
     {
       "coordinate": {
@@ -25,7 +26,7 @@
       },
       "zastavka": true,
       "streetId": "Miller Meadow Close",
-      "casOdjezdu": "06:07:00"
+      "casOdjezdu": "06:06:03"
     },
     {
       "coordinate": {
@@ -33,7 +34,8 @@
         "y": 177.0
       },
       "zastavka": false,
-      "streetId": "Holt Wharf"
+      "streetId": "Holt Wharf",
+      "casOdjezdu": "06:06:28"
     },
     {
       "coordinate": {
@@ -42,7 +44,7 @@
       },
       "zastavka": true,
       "streetId": "Holt Wharf",
-      "casOdjezdu": "06:10:00"
+      "casOdjezdu": "06:09:03"
     },
     {
       "coordinate": {
@@ -50,7 +52,8 @@
         "y": 146.0
       },
       "zastavka": false,
-      "streetId": "Atkinson Warren"
+      "streetId": "Atkinson Warren",
+      "casOdjezdu": "06:10:29"
     },
     {
       "coordinate": {
@@ -59,7 +62,7 @@
       },
       "zastavka": true,
       "streetId": "Atkinson Warren",
-      "casOdjezdu": "06:14:00"
+      "casOdjezdu": "06:13:13"
     },
     {
       "coordinate": {
@@ -67,7 +70,8 @@
         "y": 255.0
       },
       "zastavka": false,
-      "streetId": "Arran Copse"
+      "streetId": "Arran Copse",
+      "casOdjezdu": "06:13:26"
     },
     {
       "coordinate": {
@@ -76,7 +80,7 @@
       },
       "zastavka": true,
       "streetId": "Arran Copse",
-      "casOdjezdu": "06:17:00"
+      "casOdjezdu": "06:16:33"
     },
     {
       "coordinate": {
@@ -84,7 +88,8 @@
         "y": 506.0
       },
       "zastavka": false,
-      "streetId": "Hamadryad Road"
+      "streetId": "Hamadryad Road",
+      "casOdjezdu": "06:17:37"
     },
     {
       "coordinate": {
@@ -93,7 +98,7 @@
       },
       "zastavka": true,
       "streetId": "Hamadryad Road",
-      "casOdjezdu": "06:20:00"
+      "casOdjezdu": "06:18:58"
     },
     {
       "coordinate": {
@@ -101,7 +106,8 @@
         "y": 655.0
       },
       "zastavka": false,
-      "streetId": "Dereham Walk"
+      "streetId": "Dereham Walk",
+      "casOdjezdu": "06:20:59"
     },
     {
       "coordinate": {
@@ -110,7 +116,7 @@
       },
       "zastavka": true,
       "streetId": "Dereham Walk",
-      "casOdjezdu": "06:24:00"
+      "casOdjezdu": "06:22:59"
     },
     {
       "coordinate": {
@@ -118,7 +124,8 @@
         "y": 622.0
       },
       "zastavka": false,
-      "streetId": "Atkinson Springs"
+      "streetId": "Atkinson Springs",
+      "casOdjezdu": "06:24:42"
     },
     {
       "coordinate": {
@@ -127,7 +134,7 @@
       },
       "zastavka": true,
       "streetId": "Atkinson Springs",
-      "casOdjezdu": "06:29:00"
+      "casOdjezdu": "06:27:49"
     },
     {
       "coordinate": {
@@ -135,7 +142,8 @@
         "y": 595.0
       },
       "zastavka": false,
-      "streetId": "Tresillian Road"
+      "streetId": "Tresillian Road",
+      "casOdjezdu": "06:28:19"
     },
     {
       "coordinate": {
@@ -144,7 +152,7 @@
       },
       "zastavka": false,
       "streetId": "Tresillian Road",
-      "casOdjezdu": "06:32:00"
+      "casOdjezdu": "06:31:28"
     }
   ],
   "vehicles": [

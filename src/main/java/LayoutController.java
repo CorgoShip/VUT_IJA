@@ -189,12 +189,9 @@ public class LayoutController {
                 return new Coordinate(prev.getCoordinate().getX() + dx*part,prev.getCoordinate().getY()+dy*part);
                  */
             }
-
             //prev = point;
             //prevTime = pointTime;
         }
         return line.getPoints().get(0).getCoordinate();
     }
-
-
 }
