@@ -61,7 +61,6 @@ public class Vehicle implements Movable{
             //System.out.println( + time);
 
             //odstranim bod ke ktermu jsem prave prijel
-            //TODO:osetreni konce listu
             currentLine.getPoints().remove(0);
 
 

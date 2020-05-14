@@ -1,6 +1,4 @@
-import classes.Drawable;
-import classes.Line;
-import classes.Movable;
+import classes.*;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -21,6 +19,7 @@ import java.util.TimerTask;
 public class LayoutController {
 
     private List<Drawable> streets = new ArrayList<Drawable>();
+    private List<Line> lines = new ArrayList<>();
     private List<Movable> vehicles = new ArrayList<>();
     private Timer timer;
     private LocalTime time = new Time(6,0,0).toLocalTime();
@@ -28,7 +27,10 @@ public class LayoutController {
     private List<Movable> toRemove = new ArrayList<>();
 
     @FXML
-    private ListView lineList;
+    private ListView<String> vehicleList;
+
+    @FXML
+    private ListView<String> lineList;
 
     @FXML
     private TextField speed;
@@ -77,14 +79,26 @@ public class LayoutController {
 
     }
 
-    public void setVehicles(List<Movable> vehicles)
+    public  void setLines(List<Line> lines)
     {
-        //TODO: upravit na add pokud bysme vozidla prifavali ve for cyklu po jednom
-        this.vehicles = vehicles;
-        for(Movable item : this.vehicles)
+        this.lines = lines;
+
+        for (Line line : lines)
         {
-            map.getChildren().addAll(item.getGui());
+            for (String vehicleID : line.getVehicles())
+            {
+                //TODO:nastavit souradnice podle casu na spravnou pocatecni pozici
+                addVehicle(new Vehicle(new Coordinate(71.30280079586885,278.6122408888676),vehicleID,line));
+            }
         }
+
+
+    }
+
+    public void addVehicle(Movable vehicle)
+    {
+        this.vehicles.add(vehicle);
+        map.getChildren().addAll(vehicle.getGui());
     }
 
     public void startTime(double speed)
@@ -96,12 +110,8 @@ public class LayoutController {
                 time = time.plusSeconds(rate);
                 //System.out.println(time);
 
-                //mark  mariking selected lines
-                ObservableList selectedIndices = lineList.getSelectionModel().getSelectedItems();
-                for(Object item : selectedIndices){
-                    System.out.println(item);
-                }
-
+                //viewlists
+                String lineId = lineList.getSelectionModel().getSelectedItem();
 
                 //on time actions
                 for (Movable item : vehicles)
@@ -134,7 +144,6 @@ public class LayoutController {
 
     public void init()
     {
-        this.startTime(1);
-        lineList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        this.startTime(1);;
     }
 }
