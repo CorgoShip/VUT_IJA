@@ -76,7 +76,7 @@ public class Main extends Application {
         {
             item.print();
         }
-        */
+
         /*
         line1.setId("line1");
         line1.addVehicle("10");
@@ -89,17 +89,15 @@ public class Main extends Application {
         line1.addVehicle("17");
         line1.addVehicle("18");
         line1.addVehicle("19");
-
+        */
 
         //Point point = new Point(new Coordinate(12, 41), true, "Random", Time.valueOf("06:04:12"));
         Gson bson = new GsonBuilder().setPrettyPrinting().create();
         String pointS = bson.toJson(line1);
 
-        try (PrintWriter out = new PrintWriter("linecka1.out"))
+        try (PrintWriter out = new PrintWriter("linecka1.json"))
         {
             out.println(pointS);
         }
-        */
-
     }
 }
