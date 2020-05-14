@@ -69,6 +69,21 @@ public class LayoutController {
         }
     }
 
+    @FXML
+    private void onMouseclicked()
+    {
+        //viewlists
+        String lineId = lineList.getSelectionModel().getSelectedItem();
+        for(Line line : lines)
+        {
+            if (line.getId() == lineList.getSelectionModel().getSelectedItem())
+            {
+
+            }
+        }
+    }
+
+
     public void setStreets(List<Drawable> streets2)
     {
         this.streets .add(streets2.get(0));
@@ -109,9 +124,6 @@ public class LayoutController {
             public void run() {
                 time = time.plusSeconds(rate);
                 //System.out.println(time);
-
-                //viewlists
-                String lineId = lineList.getSelectionModel().getSelectedItem();
 
                 //on time actions
                 for (Movable item : vehicles)
