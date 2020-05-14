@@ -55,7 +55,9 @@ public class Main extends Application {
 
         //Starting timer
         controller.startTime(1); // Defaultne je speed 1x
-
+        controller.addToList("a");
+        controller.addToList("b");
+        controller.addToList("c");
 
 
 

@@ -10,7 +10,7 @@ public class Line {
     public Line() {
     }
 
-    public String getId (){ return this.id);}
+    public String getId (){ return this.id;}
 
     public ArrayList<Point> getPoints() {
         return points;

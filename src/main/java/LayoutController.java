@@ -109,8 +109,16 @@ public class LayoutController {
         },0, (long) (1000 / speed));
     }
 
+    public  void addToList(String line)
+    {
+        lineList.getItems().add(line);
+    }
+
+
+    /**
     public  void addToList(Line line)
     {
         lineList.getItems().add(line.getId());
     }
+     */
 }
