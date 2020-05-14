@@ -1,4 +1,5 @@
 import classes.Drawable;
+import classes.Line;
 import classes.Movable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -6,6 +7,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
 import jdk.vm.ci.meta.Local;
+
+import javafx.scene.control.ListView;
 import java.sql.Time;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -20,6 +23,10 @@ public class LayoutController {
     private Timer timer;
     private LocalTime time = new Time(6,0,0).toLocalTime();
     private int rate = 1;
+    private List<Movable> toRemove = new ArrayList<>();
+
+    @FXML
+    private ListView lineList;
 
     @FXML
     private TextField speed;
@@ -70,7 +77,7 @@ public class LayoutController {
 
     public void setVehicles(List<Movable> vehicles)
     {
-        //TODO: upravit na add pokud bysme vozidla prifavali ve for cklyu po jednom
+        //TODO: upravit na add pokud bysme vozidla prifavali ve for cyklu po jednom
         this.vehicles = vehicles;
         for(Movable item : this.vehicles)
         {
@@ -90,11 +97,20 @@ public class LayoutController {
                 //move all vehicles
                 for (Movable item : vehicles)
                 {
-                    item.move(time, streets);
+                    if(item.move(time, streets) == false)
+                    {
+                        map.getChildren().remove(this);
+                        vehicles.remove(this);
+                    }
                     //System.out.println(item);
                 }
 
             }
         },0, (long) (1000 / speed));
+    }
+
+    public  void addToList(Line line)
+    {
+        lineList.getItems().add(line.getId());
     }
 }

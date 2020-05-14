@@ -30,12 +30,18 @@ public class Main extends Application {
         ArrayList<Street> ourStreets = data.getStreets();
 
         //loading lines
+        //TODO: tady by asi bylo idelani kdyby to vracelo list linek
         Reader line1Reader = Files.newBufferedReader(Paths.get("line1.json"));
         Line line1 = gson.fromJson(line1Reader, Line.class);
+
+
+
+        /**
         for (Point item : line1.getPoints())
         {
             item.print();
         }
+         */
 
         //adding vehicles to scene
         LayoutController controller = loader.getController();
@@ -49,6 +55,12 @@ public class Main extends Application {
 
         //Starting timer
         controller.startTime(1); // Defaultne je speed 1x
+
+
+
+
+
+
 
         /*
         Reader pointReader = Files.newBufferedReader(Paths.get("out.json"));

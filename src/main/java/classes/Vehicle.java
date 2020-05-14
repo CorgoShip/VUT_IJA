@@ -15,7 +15,7 @@ public class Vehicle implements Movable{
     private transient List<Shape> gui;
     private Line line;
     private Line currentLine;
-    private double speed = 50;
+    private double speed = 1;
 
     public Vehicle(Coordinate p,String id,Line line)
     {
@@ -36,11 +36,16 @@ public class Vehicle implements Movable{
     }
 
     @Override
-    public void move(LocalTime time,List<Drawable> streets) {
+    public boolean move(LocalTime time,List<Drawable> streets) {
         //zjistim na ktere jsem ulici
         //Drawable street = this.getStreet(streets);
 
         //ziskam bod ke kteremu mam prave jet
+        if(currentLine.getPoints().isEmpty())
+        {
+            return false;
+        }
+
         Point nextpoint = currentLine.getPoints().get(0);
 
         //vypocitam vzdalenost na x a y ose a velikost primky mezi vozidlem a bodem
@@ -52,7 +57,8 @@ public class Vehicle implements Movable{
         //vzdalenost od bodu je mensi nez rychlost za jednotku casu
         if(lenght <= speed)
         {
-            //System.out.println(street.getName() + time);
+
+            //System.out.println( + time);
 
             //odstranim bod ke ktermu jsem prave prijel
             //TODO:osetreni konce listu
@@ -91,6 +97,7 @@ public class Vehicle implements Movable{
 
         //System.out.println(nextpoint.getCoordinate().getX());
         //System.out.println(nextpoint.getCoordinate().getY());
+        return true;
     }
 
     private Drawable getStreet(List<Drawable> streets)
