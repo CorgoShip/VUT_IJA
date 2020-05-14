@@ -16,9 +16,11 @@ public class Vehicle implements Movable{
     private Line line;
     private Line currentLine;
     private double speed = 1;
+    private double timeoffset;
 
-    public Vehicle(Coordinate p,String id,Line line)
+    public Vehicle(Coordinate p,String id,Line line,double to)
     {
+        this.timeoffset = to;
         this.position = p;
         this.id = id;
         gui = new ArrayList<Shape>();

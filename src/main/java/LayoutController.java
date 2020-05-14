@@ -157,7 +157,8 @@ public class LayoutController {
         LocalTime prevTime = null;
         for (Point point : line.getPoints())
         {
-
+            System.out.println(point.getCasOdjezdu());
+            /**
             LocalTime pointTime = LocalTime.parse(point.getCasOdjezdu());
 
             if(time.compareTo(pointTime) == 0 )
@@ -187,14 +188,13 @@ public class LayoutController {
                 double part = timeTraveled/timeDifference;
 
                 return new Coordinate(prev.getCoordinate().getX() + dx*part,prev.getCoordinate().getY()+dy*part);
-                 */
-            }
 
+            }
+            */
             //prev = point;
             //prevTime = pointTime;
         }
-        return line.getPoints().get(0).getCoordinate();
+        //return line.getPoints().get(0).getCoordinate();
+        return  new Coordinate(1,2);
     }
-
-
 }
