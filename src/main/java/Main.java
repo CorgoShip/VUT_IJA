@@ -48,7 +48,7 @@ public class Main extends Application {
         }
 
         //Starting timer
-        controller.startTime();
+        controller.startTime(1); // Defaultne je speed 1x
 
         /*
         Reader pointReader = Files.newBufferedReader(Paths.get("out.json"));
