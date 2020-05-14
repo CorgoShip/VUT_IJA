@@ -1,8 +1,10 @@
 import classes.Drawable;
 import classes.Line;
 import classes.Movable;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
@@ -94,9 +96,17 @@ public class LayoutController {
                 time = time.plusSeconds(rate);
                 //System.out.println(time);
 
-                //move all vehicles
+                //mark  mariking selected lines
+                ObservableList selectedIndices = lineList.getSelectionModel().getSelectedItems();
+                for(Object item : selectedIndices){
+                    System.out.println(item);
+                }
+
+
+                //on time actions
                 for (Movable item : vehicles)
                 {
+                    //update vehicle position
                     if(item.move(time, streets) == false)
                     {
                         map.getChildren().remove(this);
@@ -121,4 +131,10 @@ public class LayoutController {
         lineList.getItems().add(line.getId());
     }
      */
+
+    public void init()
+    {
+        this.startTime(1);
+        lineList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    }
 }

@@ -26,6 +26,11 @@ public class Main extends Application {
         Data data = gson.fromJson(reader, Data.class);
         //data.getStreets().forEach(System.out::println);
 
+
+        //inicialization of controller
+        LayoutController controller = loader.getController();
+        controller.init();
+
         //Street list imported form json file
         ArrayList<Street> ourStreets = data.getStreets();
 
@@ -44,7 +49,6 @@ public class Main extends Application {
          */
 
         //adding vehicles to scene
-        LayoutController controller = loader.getController();
         controller.setVehicles(Arrays.asList(new Vehicle(new Coordinate(71.30280079586885,278.6122408888676),"200",line1)));
 
         //adding streets to scene
@@ -54,7 +58,6 @@ public class Main extends Application {
         }
 
         //Starting timer
-        controller.startTime(1); // Defaultne je speed 1x
         controller.addToList("a");
         controller.addToList("b");
         controller.addToList("c");
