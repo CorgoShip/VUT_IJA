@@ -72,14 +72,20 @@ public class LayoutController {
     @FXML
     private void onMouseclicked()
     {
+        vehicleList.getSelectionModel().clearSelection();
         //viewlists
         String lineId = lineList.getSelectionModel().getSelectedItem();
         for(Line line : lines)
         {
             if (line.getId() == lineList.getSelectionModel().getSelectedItem())
             {
-
+                //TODO:zvyraznit ulice linky
+                for(String vehicle :line.getVehicles())
+                {
+                    vehicleList.getItems().add(vehicle);
+                }
             }
+
         }
     }
 

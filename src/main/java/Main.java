@@ -25,7 +25,7 @@ public class Main extends Application {
         primaryStage.show();
 
         Reader reader = Files.newBufferedReader(Paths.get("convertcsv.json"));
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setDateFormat(0).create();
         Data data = gson.fromJson(reader, Data.class);
         //data.getStreets().forEach(System.out::println);
 
