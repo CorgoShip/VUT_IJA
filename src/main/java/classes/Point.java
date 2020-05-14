@@ -6,7 +6,7 @@ public class Point {
     private Coordinate coordinate;
     private Boolean zastavka;
     private String streetId;
-    private Time casOdjezdu;
+    private String casOdjezdu;
 
     public Coordinate getCoordinate() {
         return coordinate;
@@ -28,7 +28,7 @@ public class Point {
         System.out.println();
     }
 
-    public Point(Coordinate coordinate, Boolean zastavka, String streetId, Time casOdjezdu) {
+    public Point(Coordinate coordinate, Boolean zastavka, String streetId, String casOdjezdu) {
         this.coordinate = coordinate;
         this.zastavka = zastavka;
         this.streetId = streetId;
