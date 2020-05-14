@@ -1,16 +1,19 @@
 package classes;
 
+import java.sql.Time;
+
 public class Point {
     private Coordinate coordinate;
-    private Boolean zastavit;
+    private Boolean zastavka;
     private String streetId;
+    private Time casOdjezdu;
 
     public Coordinate getCoordinate() {
         return coordinate;
     }
 
-    public Boolean getZastavit() {
-        return zastavit;
+    public Boolean getZastavka() {
+        return zastavka;
     }
 
     public String getStreetId() {
@@ -20,14 +23,15 @@ public class Point {
     public void print()
     {
         this.coordinate.printAll();
-        System.out.println(this.zastavit);
+        System.out.println(this.zastavka);
         System.out.println(this.streetId);
         System.out.println();
     }
 
-    public Point(Coordinate coordinate, Boolean zastavit, String streetId) {
+    public Point(Coordinate coordinate, Boolean zastavka, String streetId, Time casOdjezdu) {
         this.coordinate = coordinate;
-        this.zastavit = zastavit;
+        this.zastavka = zastavka;
         this.streetId = streetId;
+        this.casOdjezdu = casOdjezdu;
     }
 }

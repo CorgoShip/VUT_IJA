@@ -1,14 +1,17 @@
 import classes.*;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.PrintWriter;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -84,7 +87,29 @@ public class Main extends Application {
             item.print();
         }
         */
+        /*
+        line1.setId("line1");
+        line1.addVehicle("10");
+        line1.addVehicle("11");
+        line1.addVehicle("12");
+        line1.addVehicle("13");
+        line1.addVehicle("14");
+        line1.addVehicle("15");
+        line1.addVehicle("16");
+        line1.addVehicle("17");
+        line1.addVehicle("18");
+        line1.addVehicle("19");
 
+
+        //Point point = new Point(new Coordinate(12, 41), true, "Random", Time.valueOf("06:04:12"));
+        Gson bson = new GsonBuilder().setPrettyPrinting().create();
+        String pointS = bson.toJson(line1);
+
+        try (PrintWriter out = new PrintWriter("linecka1.out"))
+        {
+            out.println(pointS);
+        }
+        */
 
     }
 }

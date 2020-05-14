@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Line {
     private String id;
     private ArrayList<Point> points = new ArrayList<Point>();
-    private ArrayList<Vehicle> vehicles = new ArrayList<Vehicle>();
+    private ArrayList<String> vehicles = new ArrayList<String>();
 
     public Line() {
     }
@@ -16,7 +16,16 @@ public class Line {
         return points;
     }
 
-    public ArrayList<Vehicle> getVehicles() {
+    public ArrayList<String> getVehicles() {
         return vehicles;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void addVehicle(String id)
+    {
+        vehicles.add(id);
     }
 }
