@@ -55,6 +55,7 @@ public class Vehicle implements Movable{
             //System.out.println(street.getName() + time);
 
             //odstranim bod ke ktermu jsem prave prijel
+            //TODO:osetreni konce listu
             currentLine.getPoints().remove(0);
 
 
@@ -76,7 +77,7 @@ public class Vehicle implements Movable{
          {
              //spocitam cast vzdalenosti, kterou chci ujet
              //TODO: 5 se prepise rychlosti dopravni situaci ulice, na ktere je vozidlo
-             double part = (0 / lenght);
+             double part = (speed / lenght);
 
              this.position.setX(this.position.getX() + dx * part);
              this.position.setY(this.position.getY() + dy * part);
@@ -91,7 +92,7 @@ public class Vehicle implements Movable{
         //System.out.println(nextpoint.getCoordinate().getX());
         //System.out.println(nextpoint.getCoordinate().getY());
     }
-/**
+
     private Drawable getStreet(List<Drawable> streets)
     {
         for (Drawable item :streets)
@@ -128,6 +129,6 @@ public class Vehicle implements Movable{
 
         return null;
     }
-*/
+
 
 }
