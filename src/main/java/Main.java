@@ -38,7 +38,7 @@ public class Main extends Application {
 
         //loading lines
         //TODO: tady by asi bylo idelani kdyby to vracelo list linek
-        Reader line1Reader = Files.newBufferedReader(Paths.get("line2.json"));
+        Reader line1Reader = Files.newBufferedReader(Paths.get("line1.json"));
         Line line1 = gson.fromJson(line1Reader, Line.class);
         controller.setLines(Arrays.asList(line1));
 

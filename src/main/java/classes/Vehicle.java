@@ -47,7 +47,6 @@ public class Vehicle implements Movable {
         symbol.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                mouseEvent.consume();
                 indicated = !indicated;
                 for (Drawable street : streets) {
                     for (Point point : line.getPoints())
@@ -72,16 +71,15 @@ public class Vehicle implements Movable {
                         }
                     }
                 }
+                mouseEvent.consume();
             }
         });
 
 
-                gui.add(symbol);
+        gui.add(symbol);
         gui.add(new Text(position.getX() + 4, position.getY() + 3, id));
         this.line = line;
         this.currentLine = cline;
-
-        //TODO: current line se bude nastavovat podle casu (odstrani se ze zecatku pointe ktere se uz ujely)
     }
 
     @Override
@@ -94,20 +92,7 @@ public class Vehicle implements Movable {
     }
 
     @Override
-    public synchronized boolean move(LocalTime time,List<Drawable> streets) {
-        /**
-         if(this.position == null)
-         {
-         LocalTime firstPointTime = LocalTime.parse(this.line.getPoints().get(0).getCasOdjezdu());
-         if(time.compareTo(firstPointTime) == 0)
-         {
-         this.position = new Coordinate(line.getPoints().get(0).getCoordinate().getX(),line.getPoints().get(0).getCoordinate().getY());
-         }
-         return true;
-         }
-         */
-
-
+    public boolean move(LocalTime time,List<Drawable> streets) {
         //ziskam bod ke kteremu mam prave jet
         if(currentLine.getPoints().isEmpty())
         {
@@ -132,8 +117,17 @@ public class Vehicle implements Movable {
         //vzdalenost od bodu je mensi nez rychlost za jednotku casu
         if(lenght <= (speed - speed*traffic*0.01))
         {
+            if(nextpoint.getZastavka())
+            {
+                LocalTime stoptime = LocalTime.parse(line.getPoints().get(0).getCasOdjezdu()).plusMinutes(timeoffset);
+                if(time.compareTo(stoptime) < 0)
+                {
+                    System.out.println(time + " <->" +stoptime);
+                    return true;
+                }
 
-            System.out.println( street + " " + time);
+            }
+
 
             //odstranim bod ke ktermu jsem prave prijel
             currentLine.getPoints().remove(0);
@@ -184,11 +178,11 @@ public class Vehicle implements Movable {
             if (item.getName().equals(this.StreetId))
             {
                 //System.out.println("su na: " + item.getName());
-                System.out.println("su na: " + this.StreetId);
+                //System.out.println("su na: " + this.StreetId);
                 return item;
             }
         }
-        System.out.println("su na: null");
+        //System.out.println("su na: null");
         return null;
     }
 

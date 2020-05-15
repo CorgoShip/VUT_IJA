@@ -23,7 +23,7 @@ public class LayoutController {
     private List<Line> lines = new ArrayList<>();
     private List<Movable> vehicles = new ArrayList<>();
     private Timer timer;
-    private LocalTime time = new Time(6, 0, 2).toLocalTime();
+    private LocalTime time = new Time(5, 59, 2).toLocalTime();
     private int rate = 1;
     private List<Movable> toRemove = new ArrayList<>();
 
@@ -41,9 +41,6 @@ public class LayoutController {
 
     @FXML
     private Pane map;
-
-    private double xOffset;
-    private double yOffset;
 
     @FXML
     private void onZoom(ScrollEvent event) {
@@ -73,7 +70,7 @@ public class LayoutController {
     private void VehicleOnMouseclicked(){
         for (Movable v : vehicles)
         {
-
+            //TODO:show info
         }
 
     }
@@ -112,10 +109,6 @@ public class LayoutController {
                 //TODO:nastavit souradnice podle casu na spravnou pocatecni pozici
 
                 Vehicle vehicle = getInitialPosition(line,count,vehicleID);
-                System.out.println(vehicleID);
-                System.out.println(vehicle.getPosition().getX());
-                System.out.println(vehicle.getPosition().getY());
-                System.out.println("----------");
                 addVehicle(vehicle);
                 count++;
             }
@@ -162,7 +155,7 @@ public class LayoutController {
 
     public synchronized Vehicle getInitialPosition(Line line,int count,String id)
     {
-        Coordinate vehiclePosition = new Coordinate(0,0);
+        Coordinate vehiclePosition = new Coordinate(line.getPoints().get(0).getCoordinate().getX(),line.getPoints().get(0).getCoordinate().getY());
         Line vehicleLine = new Line(line);
 
         Point prev = line.getPoints().get(0);
@@ -182,11 +175,14 @@ public class LayoutController {
 
             if(time.compareTo(pointTime) < 0  )
             {
-                System.out.println("yes");
+                if(prevTime.compareTo(pointTime) == 0)
+                {
+                    System.out.println("yes");
+                    return  new Vehicle(vehiclePosition,id,line,vehicleLine,count,streets);
+                }
+
                  double timeDifference = pointTime.getHour()*3600 + pointTime.getMinute()*60 + pointTime.getSecond() - prevTime.getHour()*3600 - prevTime.getMinute()*60 - prevTime.getSecond();
-                System.out.println(timeDifference);
                  double timeTraveled = time.getHour()*3600 + time.getMinute()*60 + time.getSecond() - prevTime.getHour()*3600 - prevTime.getMinute()*60 - prevTime.getSecond();
-                System.out.println(timeTraveled);
                  double dx = point.getCoordinate().getX() - prev.getCoordinate().getX();
                  double dy = point.getCoordinate().getY() - prev.getCoordinate().getY();
                  double part = timeTraveled/timeDifference;

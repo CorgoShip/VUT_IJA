@@ -79,13 +79,6 @@ public class Street implements Drawable{
         List<Shape> tmp = new ArrayList<Shape>();
 
         Shape line = new Line(this.from.getX(),this.from.getY(),this.to.getX(),this.to.getY());
-        line.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                
-            }
-        });
-
         tmp.add(line);
         for (Stop item : stops)
         {
@@ -96,31 +89,7 @@ public class Street implements Drawable{
         }
 
         Text text = new Text((this.getFrom().getX() + this.getTo().getX())/2 - (this.getName().length()*3),((this.getFrom().getY()+this.getTo().getY())/2) -4,this.getName());
-/**
-        double angle = Math.atan2(this.getFrom().getY() - this.getTo().getY(), this.getFrom().getX() - this.getTo().getX());
-        angle = angle * 180 /  Math.PI ;
-        //text.setRotate(angle);
 
-        if (angle < 90)
-        {
-            text.setRotate(angle + 180);
-            text.setX(text.getX() + 5);
-
-        }
-        else if (angle < 180)
-        {
-            text.setRotate(-(180-angle));
-        }
-        else if (angle < 270)
-        {
-            text.setRotate(angle - 180);
-        }
-        else
-        {
-            text.setRotate(-(360-angle));
-            System.out.println(this.getName());
-        }
-*/
         symbols.addAll(tmp);
         text.setFont(new Font(12));
         tmp.add(text);

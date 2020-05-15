@@ -6,7 +6,7 @@
         "x": 71.30280079586885,
         "y": 278.6122408888676
       },
-      "zastavka": false,
+      "zastavka": true,
       "streetId": "Blane Street",
       "casOdjezdu": "06:00:01"
     },
