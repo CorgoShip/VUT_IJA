@@ -2,14 +2,13 @@ import classes.*;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.transform.Scale;
 import jdk.vm.ci.meta.Local;
-
-import javafx.scene.control.ListView;
 
 import java.sql.Time;
 import java.time.LocalTime;
@@ -24,9 +23,12 @@ public class LayoutController {
     private List<Line> lines = new ArrayList<>();
     private List<Movable> vehicles = new ArrayList<>();
     private Timer timer;
-    private LocalTime time = new Time(6, 15, 0).toLocalTime();
+    private LocalTime time = new Time(6, 0, 2).toLocalTime();
     private int rate = 1;
     private List<Movable> toRemove = new ArrayList<>();
+
+    @FXML
+    private Pane info;
 
     @FXML
     private ListView<String> vehicleList;
@@ -39,6 +41,9 @@ public class LayoutController {
 
     @FXML
     private Pane map;
+
+    private double xOffset;
+    private double yOffset;
 
     @FXML
     private void onZoom(ScrollEvent event) {
@@ -66,6 +71,10 @@ public class LayoutController {
 
     @FXML
     private void VehicleOnMouseclicked(){
+        for (Movable v : vehicles)
+        {
+
+        }
 
     }
 
@@ -102,9 +111,15 @@ public class LayoutController {
             for (String vehicleID : line.getVehicles()) {
                 //TODO:nastavit souradnice podle casu na spravnou pocatecni pozici
 
-                addVehicle(getInitialPosition(line,count,vehicleID));
+                Vehicle vehicle = getInitialPosition(line,count,vehicleID);
+                System.out.println(vehicleID);
+                System.out.println(vehicle.getPosition().getX());
+                System.out.println(vehicle.getPosition().getY());
+                System.out.println("----------");
+                addVehicle(vehicle);
                 count++;
             }
+            count = 0;
         }
     }
 
@@ -141,14 +156,6 @@ public class LayoutController {
         lineList.getItems().add(line);
     }
 
-
-    /**
-     * public  void addToList(Line line)
-     * {
-     * lineList.getItems().add(line.getId());
-     * }
-     */
-
     public void init() {
         this.startTime(1);
     }
@@ -175,10 +182,11 @@ public class LayoutController {
 
             if(time.compareTo(pointTime) < 0  )
             {
+                System.out.println("yes");
                  double timeDifference = pointTime.getHour()*3600 + pointTime.getMinute()*60 + pointTime.getSecond() - prevTime.getHour()*3600 - prevTime.getMinute()*60 - prevTime.getSecond();
-
+                System.out.println(timeDifference);
                  double timeTraveled = time.getHour()*3600 + time.getMinute()*60 + time.getSecond() - prevTime.getHour()*3600 - prevTime.getMinute()*60 - prevTime.getSecond();
-
+                System.out.println(timeTraveled);
                  double dx = point.getCoordinate().getX() - prev.getCoordinate().getX();
                  double dy = point.getCoordinate().getY() - prev.getCoordinate().getY();
                  double part = timeTraveled/timeDifference;
@@ -189,10 +197,9 @@ public class LayoutController {
             }
             prev = point;
             prevTime = pointTime;
-            //TODO remove point from line
             vehicleLine.getPoints().remove(0);
         }
 
-        return  new Vehicle(vehiclePosition,id,vehicleLine,count);
+        return  new Vehicle(vehiclePosition,id,line,vehicleLine,count,streets);
     }
 }

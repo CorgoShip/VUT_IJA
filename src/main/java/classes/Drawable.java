@@ -12,4 +12,5 @@ public interface Drawable {
     Coordinate getFrom();
     Coordinate getTo();
     public double getTraffic();
+    ArrayList<Shape> getSymbols();
 }

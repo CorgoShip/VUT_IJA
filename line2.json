@@ -1,0 +1,125 @@
+{
+  "id": "line2",
+  "points": [
+    {
+      "coordinate": {
+        "x": 267.7566820397193,
+        "y": 378.3628562905309
+      },
+      "zastavka": true,
+      "streetId": "Riley Grange",
+      "casOdjezdu": "06:00:01"
+    },
+    {
+      "coordinate": {
+        "x": 59.0,
+        "y": 360.0
+      },
+      "zastavka": false,
+      "streetId": "Tresillian Road",
+      "casOdjezdu": "06:01:01"
+    },
+    {
+      "coordinate": {
+        "x": 104.11387604074483,
+        "y": 433.62333937204886
+      },
+      "zastavka": true,
+      "streetId": "Tresillian Road",
+      "casOdjezdu": "06:02:01"
+    },
+    {
+      "coordinate": {
+        "x": 203.0,
+        "y": 595.0
+      },
+      "zastavka": false,
+      "streetId": "Atkinson Springs",
+      "casOdjezdu": "06:03:01"
+    },
+    {
+      "coordinate": {
+        "x": 233.11293154464417,
+        "y": 598.7816239614205
+      },
+      "zastavka": true,
+      "streetId": "Atkinson Springs",
+      "casOdjezdu": "06:04:01"
+    },
+    {
+      "coordinate": {
+        "x": 418.0,
+        "y": 622.0
+      },
+      "zastavka": false,
+      "streetId": "King Edward Willows",
+      "casOdjezdu": "06:05:01"
+    },
+    {
+      "coordinate": {
+        "x": 478.2547601434581,
+        "y": 556.2045722571435
+      },
+      "zastavka": true,
+      "streetId": "King Edward Willows",
+      "casOdjezdu": "06:06:01"
+    },
+    {
+      "coordinate": {
+        "x": 505.0,
+        "y": 527.0
+      },
+      "zastavka": false,
+      "streetId": "Railway Gardens",
+      "casOdjezdu": "06:07:01"
+    },
+    {
+      "coordinate": {
+        "x": 611.8893410371845,
+        "y": 468.1694324524023
+      },
+      "zastavka": true,
+      "streetId": "Railway Gardens",
+      "casOdjezdu": "06:08:01"
+    },
+    {
+      "coordinate": {
+        "x": 632.3247878006911,
+        "y": 456.9220160166739
+      },
+      "zastavka": true,
+      "streetId": "Railway Gardens",
+      "casOdjezdu": "06:09:01"
+    },
+    {
+      "coordinate": {
+        "x": 634.0,
+        "y": 456.0
+      },
+      "zastavka": false,
+      "streetId": "Andover Rise",
+      "casOdjezdu": "06:10:01"
+    },
+    {
+      "coordinate": {
+        "x": 705.028936809227,
+        "y": 342.69193413766163
+      },
+      "zastavka": true,
+      "streetId": "Andover Rise",
+      "casOdjezdu": "06:11:01"
+    }
+  ],
+  "vehicles": [
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29"
+  ]
+}

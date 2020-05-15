@@ -1,5 +1,11 @@
 package classes;
 
+import javafx.application.Platform;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.scene.control.TitledPane;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape;
@@ -9,7 +15,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vehicle implements Movable{
+public class Vehicle implements Movable {
     private Coordinate position;
     private String id;
     private transient List<Shape> gui;
@@ -17,19 +23,65 @@ public class Vehicle implements Movable{
     private Line currentLine;
     private double speed = 1;
     private int timeoffset;
+    private List<Drawable> streets = new ArrayList<Drawable>();
+    private boolean indicated = true;
+    private String StreetId;
 
-    public Vehicle(Coordinate p,String id,Line line, int to )
-    {
+    public Coordinate getPosition() {
+        return position;
+    }
+
+    @FXML
+    private Pane info;
+
+    public Vehicle(Coordinate p, String id, Line line, Line cline, int to,List<Drawable> streets) {
         this.timeoffset = to;
         this.position = p;
         this.id = id;
+        this.streets = streets;
         gui = new ArrayList<Shape>();
-        gui.add(new Circle(position.getX(),position.getY(),5, Color.BLUE));
-        gui.add(new Text(position.getX()+4,position.getY()+3,id));
+
+        Circle symbol = new Circle(position.getX(), position.getY(), 5, Color.BLUE);
+
+        //set on mouse clicked method
+        symbol.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                mouseEvent.consume();
+                indicated = !indicated;
+                for (Drawable street : streets) {
+                    for (Point point : line.getPoints())
+                    {
+                        if (street.getName().equals(point.getStreetId()))
+                        {
+                            //System.out.println(street.getName());
+
+                            if(indicated) {
+                                for (Shape shape : street.getSymbols())
+                                {
+                                    shape.setStroke(Color.GRAY);
+                                }
+                            }
+                            else {
+                                for (Shape shape : street.getSymbols())
+                                {
+                                        shape.setStroke(Color.RED);
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+
+                gui.add(symbol);
+        gui.add(new Text(position.getX() + 4, position.getY() + 3, id));
         this.line = line;
+        this.currentLine = cline;
 
         //TODO: current line se bude nastavovat podle casu (odstrani se ze zecatku pointe ktere se uz ujely)
-        this.currentLine = line;
     }
 
     @Override
@@ -43,19 +95,18 @@ public class Vehicle implements Movable{
 
     @Override
     public synchronized boolean move(LocalTime time,List<Drawable> streets) {
-/**
- if(this.position == null)
- {
- LocalTime firstPointTime = LocalTime.parse(this.line.getPoints().get(0).getCasOdjezdu());
- if(time.compareTo(firstPointTime) == 0)
- {
- this.position = new Coordinate(line.getPoints().get(0).getCoordinate().getX(),line.getPoints().get(0).getCoordinate().getY());
- }
- return true;
- }
- */
-        //zjistim na ktere jsem ulici
-        Drawable street = this.getStreet(streets);
+        /**
+         if(this.position == null)
+         {
+         LocalTime firstPointTime = LocalTime.parse(this.line.getPoints().get(0).getCasOdjezdu());
+         if(time.compareTo(firstPointTime) == 0)
+         {
+         this.position = new Coordinate(line.getPoints().get(0).getCoordinate().getX(),line.getPoints().get(0).getCoordinate().getY());
+         }
+         return true;
+         }
+         */
+
 
         //ziskam bod ke kteremu mam prave jet
         if(currentLine.getPoints().isEmpty())
@@ -66,6 +117,11 @@ public class Vehicle implements Movable{
         }
 
         Point nextpoint = currentLine.getPoints().get(0);
+        this.StreetId = currentLine.getPoints().get(0).getStreetId();
+
+        //zjistim na ktere jsem ulici
+        Drawable street = this.getStreet(streets);
+        double traffic = street.getTraffic();
 
         //vypocitam vzdalenost na x a y ose a velikost primky mezi vozidlem a bodem
         double dx = nextpoint.getCoordinate().getX() - this.position.getX();
@@ -74,7 +130,7 @@ public class Vehicle implements Movable{
 
 
         //vzdalenost od bodu je mensi nez rychlost za jednotku casu
-        if(lenght <= speed)
+        if(lenght <= (speed - speed*traffic*0.01))
         {
 
             System.out.println( street + " " + time);
@@ -101,7 +157,7 @@ public class Vehicle implements Movable{
         {
             //spocitam cast vzdalenosti, kterou chci ujet
             //TODO: 5 se prepise rychlosti dopravni situaci ulice, na ktere je vozidlo
-            double part = (speed / lenght);
+            double part = ((speed - speed*traffic*0.01) / lenght);
 
             this.position.setX(this.position.getX() + dx * part);
             this.position.setY(this.position.getY() + dy * part);
@@ -120,41 +176,21 @@ public class Vehicle implements Movable{
 
     private Drawable getStreet(List<Drawable> streets)
     {
-        for (Drawable item :streets)
+        for (Drawable item : streets)
         {
-            double lowX,topX,lowY,topY;
+            //System.out.println("item.getName() " + item.getName());
+            //System.out.println("this.StreetId: " + this.StreetId);
 
-            if (item.getFrom().getX() >= item.getTo().getX())
+            if (item.getName().equals(this.StreetId))
             {
-                lowX = item.getTo().getX();
-                topX = item.getFrom().getX();
-            }
-            else
-            {
-                topX = item.getTo().getX();
-                lowX  = item.getFrom().getX();
-            }
-
-            if(item.getFrom().getY() >= item.getTo().getY())
-            {
-                lowY = item.getTo().getY();
-                topY = item.getFrom().getY();
-            }
-            else
-            {
-                topY = item.getTo().getY();
-                lowY = item.getFrom().getY();
-            }
-
-            if(this.position.getX() >= lowX && this.position.getX() <= topX && this.position.getY() >= lowY && this.position.getY() <= topY)
-            {
+                //System.out.println("su na: " + item.getName());
+                System.out.println("su na: " + this.StreetId);
                 return item;
             }
         }
-
+        System.out.println("su na: null");
         return null;
     }
-
 
 }
 

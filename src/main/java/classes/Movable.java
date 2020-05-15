@@ -8,4 +8,5 @@ import java.util.List;
 public interface Movable {
     boolean move(LocalTime time,List<Drawable> streets);
     List<Shape> getGui();
+    Coordinate getPosition();
 }

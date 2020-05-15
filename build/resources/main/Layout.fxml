@@ -9,6 +9,16 @@
 <?import javafx.scene.layout.Pane?>
 
 <BorderPane prefHeight="746.0" prefWidth="1094.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LayoutController">
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="speed" layoutX="37.0" layoutY="707.0" prefHeight="25.0" prefWidth="116.0" promptText="Rychlost simulace" />
+            <Button layoutX="153.0" layoutY="707.0" mnemonicParsing="false" onAction="#onSpeedChange" text="Set" />
+            <ListView fx:id="lineList" layoutY="-1.0" onMouseClicked="#LineOnMouseclicked" prefHeight="205.0" prefWidth="200.0" />
+            <ListView fx:id="vehicleList" layoutY="227.0" onMouseClicked="#VehicleOnMouseclicked" prefHeight="200.0" prefWidth="200.0" />
+            <Pane fx:id="info" layoutY="448.0" prefHeight="110.0" prefWidth="200.0" />
+         </children></AnchorPane>
+   </right>
    <center>
       <ScrollPane pannable="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
@@ -16,13 +26,4 @@
          </content>
       </ScrollPane>
    </center>
-   <right>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <TextField fx:id="speed" layoutX="37.0" layoutY="707.0" prefHeight="25.0" prefWidth="116.0" promptText="Rychlost simulace" />
-            <Button layoutX="153.0" layoutY="707.0" mnemonicParsing="false" onAction="#onSpeedChange" text="Set" />
-            <ListView fx:id="lineList" layoutY="-1.0" onMouseClicked="#onMouseclicked" prefHeight="205.0" prefWidth="200.0" />
-            <ListView fx:id="vehicleList" layoutY="227.0" onMouseClicked="#onMouseclicked" prefHeight="200.0" prefWidth="200.0" />
-         </children></AnchorPane>
-   </right>
 </BorderPane>

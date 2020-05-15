@@ -1,5 +1,8 @@
 package classes;
 
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -17,6 +20,11 @@ public class Street implements Drawable{
     private Coordinate to;
     private boolean closed;
     private double traffic;
+    private transient ArrayList<Shape> symbols = new ArrayList<>();
+
+    public ArrayList<Shape> getSymbols() {
+        return symbols;
+    }
 
     public String getName() {
         return name;
@@ -66,8 +74,19 @@ public class Street implements Drawable{
 
     @Override
     public List<Shape> getGui() {
+
+
         List<Shape> tmp = new ArrayList<Shape>();
-        tmp.add(new Line(this.from.getX(),this.from.getY(),this.to.getX(),this.to.getY()));
+
+        Shape line = new Line(this.from.getX(),this.from.getY(),this.to.getX(),this.to.getY());
+        line.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                
+            }
+        });
+
+        tmp.add(line);
         for (Stop item : stops)
         {
             tmp.add(new Circle(item.getCoordinate().getX(),item.getCoordinate().getY(),5, Color.GRAY));
@@ -102,6 +121,7 @@ public class Street implements Drawable{
             System.out.println(this.getName());
         }
 */
+        symbols.addAll(tmp);
         text.setFont(new Font(12));
         tmp.add(text);
 
