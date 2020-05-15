@@ -7,6 +7,11 @@ public class Point {
     private Boolean zastavka;
     private String streetId;
     private String casOdjezdu;
+    private String stopId;
+
+    public String getStopId() {
+        return stopId;
+    }
 
     public Coordinate getCoordinate() {
         return coordinate;

@@ -27,12 +27,22 @@ public class Vehicle implements Movable {
     private boolean indicated = true;
     private String StreetId;
 
+    public int getTimeoffset() {
+        return timeoffset;
+    }
+
+    public Line getLine() {
+        return line;
+    }
+
     public Coordinate getPosition() {
         return position;
     }
 
-    @FXML
-    private Pane info;
+    @Override
+    public String getid() {
+        return this.id;
+    }
 
     public Vehicle(Coordinate p, String id, Line line, Line cline, int to,List<Drawable> streets) {
         this.timeoffset = to;
@@ -41,7 +51,9 @@ public class Vehicle implements Movable {
         this.streets = streets;
         gui = new ArrayList<Shape>();
 
-        Circle symbol = new Circle(position.getX(), position.getY(), 5, Color.BLUE);
+        Circle symbol = new Circle(position.getX(), position.getY(), 5, Color.rgb(line.hashCode()%255,(line.getPoints().size()*30)%255,line.getId().hashCode()%255));
+
+
 
         //set on mouse clicked method
         symbol.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -59,12 +71,14 @@ public class Vehicle implements Movable {
                                 for (Shape shape : street.getSymbols())
                                 {
                                     shape.setStroke(Color.GRAY);
+                                    shape.setStrokeWidth(1);
                                 }
                             }
                             else {
                                 for (Shape shape : street.getSymbols())
                                 {
-                                        shape.setStroke(Color.RED);
+                                        shape.setStroke( Color.rgb(line.hashCode()%255,(line.getPoints().size()*30)%255,line.getId().hashCode()%255));
+                                        shape.setStrokeWidth(2);
                                 }
 
                             }
@@ -122,7 +136,7 @@ public class Vehicle implements Movable {
                 LocalTime stoptime = LocalTime.parse(line.getPoints().get(0).getCasOdjezdu()).plusMinutes(timeoffset);
                 if(time.compareTo(stoptime) < 0)
                 {
-                    System.out.println(time + " <->" +stoptime);
+                   //System.out.println(time + " <->" +stoptime);
                     return true;
                 }
 

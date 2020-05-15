@@ -9,4 +9,7 @@ public interface Movable {
     boolean move(LocalTime time,List<Drawable> streets);
     List<Shape> getGui();
     Coordinate getPosition();
+    String getid();
+    Line getLine();
+    int getTimeoffset();
 }

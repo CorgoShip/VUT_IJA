@@ -8,6 +8,7 @@
       },
       "zastavka": true,
       "streetId": "Atkinson Springs",
+      "stopId": "distant",
       "casOdjezdu": "06:00:01"
     },
     {
@@ -17,6 +18,7 @@
       },
       "zastavka": false,
       "streetId": "Grantham Causeway",
+      "stopId": "",
       "casOdjezdu": "06:00:32"
     },
     {
@@ -26,6 +28,7 @@
       },
       "zastavka": true,
       "streetId": "Grantham Causeway",
+      "stopId": "help",
       "casOdjezdu": "06:03:45"
     },
     {
@@ -35,6 +38,7 @@
       },
       "zastavka": false,
       "streetId": "Barker Wood",
+      "stopId": "",
       "casOdjezdu": "06:04:20"
     },
     {
@@ -44,6 +48,7 @@
       },
       "zastavka": true,
       "streetId": "Barker Wood",
+      "stopId": "railcar",
       "casOdjezdu": "06:04:42"
     },
     {
@@ -53,6 +58,7 @@
       },
       "zastavka": true,
       "streetId": "Barker Wood",
+      "stopId": "exception",
       "casOdjezdu": "06:04:59"
     },
     {
@@ -62,6 +68,7 @@
       },
       "zastavka": false,
       "streetId": "Lyndale Hawthorns",
+      "stopId": "",
       "casOdjezdu": "06:06:57"
     },
     {
@@ -69,9 +76,50 @@
         "x": 388.9195633316925,
         "y": 255.40367698375525
       },
-      "zastavka": false,
+      "zastavka": true,
       "streetId": "Lyndale Hawthorns",
+      "stopId": "cutting",
       "casOdjezdu": "06:07:18"
+    },
+    {
+      "coordinate": {
+        "x": 381,
+        "y": 177
+      },
+      "zastavka": false,
+      "streetId": "Holt Wharf",
+      "stopId": "",
+      "casOdjezdu": "06:08:42"
+    },
+    {
+      "coordinate": {
+        "x": 535.1933824290716,
+        "y": 157.00002152593632
+      },
+      "zastavka": true,
+      "streetId": "Holt Wharf",
+      "stopId": "clearance",
+      "casOdjezdu": "06:11:13"
+    },
+    {
+      "coordinate": {
+        "x": 620,
+        "y": 146
+      },
+      "zastavka": false,
+      "streetId": "Atkinson Warren",
+      "stopId": "",
+      "casOdjezdu": "06:12:37"
+    },
+    {
+      "coordinate": {
+        "x": 749.7920136594009,
+        "y": 247.05235349196215
+      },
+      "zastavka": true,
+      "streetId": "Atkinson Warren",
+      "stopId": "dramatic",
+      "casOdjezdu": "06:15:24"
     }
   ],
   "vehicles": [

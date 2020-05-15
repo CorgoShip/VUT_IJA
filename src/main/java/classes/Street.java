@@ -2,7 +2,10 @@ package classes;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -21,6 +24,18 @@ public class Street implements Drawable{
     private boolean closed;
     private double traffic;
     private transient ArrayList<Shape> symbols = new ArrayList<>();
+    private transient Slider slider;
+    private transient Label label;
+
+    public Street() {
+
+    }
+
+    public void setTrafficControl(Slider slider, Label label)
+    {
+        this.slider = slider;
+        this.label = label;
+    }
 
     public ArrayList<Shape> getSymbols() {
         return symbols;
@@ -79,6 +94,14 @@ public class Street implements Drawable{
         List<Shape> tmp = new ArrayList<Shape>();
 
         Shape line = new Line(this.from.getX(),this.from.getY(),this.to.getX(),this.to.getY());
+        line.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                slider.adjustValue(traffic);
+                label.setText(name);
+            }
+        });
+
         tmp.add(line);
         for (Stop item : stops)
         {

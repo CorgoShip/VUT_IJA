@@ -1,8 +1,11 @@
 import classes.*;
+import classes.Point;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
@@ -10,6 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.transform.Scale;
 import jdk.vm.ci.meta.Local;
 
+import java.awt.*;
 import java.sql.Time;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -25,10 +29,30 @@ public class LayoutController {
     private Timer timer;
     private LocalTime time = new Time(5, 59, 2).toLocalTime();
     private int rate = 1;
-    private List<Movable> toRemove = new ArrayList<>();
 
     @FXML
-    private Pane info;
+    private Label timeDisplay;
+
+    @FXML
+    private Label selectedStreet;
+
+    @FXML
+    private Slider trafficSlider;
+
+    @FXML
+    private void sliderMoved(MouseEvent e) {
+
+        for (Drawable street : streets)
+        {
+            if(street.getName().equals(selectedStreet.getText()))
+            {
+                street.setTraffic(trafficSlider.valueProperty().doubleValue());
+            }
+        }
+
+        e.consume();
+    }
+
 
     @FXML
     private ListView<String> vehicleList;
@@ -41,6 +65,9 @@ public class LayoutController {
 
     @FXML
     private Pane map;
+
+    @FXML
+    private ListView<String> infoList;
 
     @FXML
     private void onZoom(ScrollEvent event) {
@@ -68,12 +95,29 @@ public class LayoutController {
 
     @FXML
     private void VehicleOnMouseclicked(){
+       infoList.getItems().clear();
         for (Movable v : vehicles)
         {
-            //TODO:show info
+            if(v.getid().equals(vehicleList.getSelectionModel().getSelectedItem()))
+            {
+                for(Point point : v.getLine().getPoints())
+                {
+                    if(point.getZastavka())
+                    {
+                        LocalTime pointTime = LocalTime.parse(point.getCasOdjezdu());
+                        pointTime = pointTime.plusMinutes(v.getTimeoffset());
+                        infoList.getItems().add(point.getStopId() + "  " + pointTime);
+                    }
+                }
+            }
         }
+    }
+
+    @FXML
+    private void infoOnMouseClick(){
 
     }
+
 
     @FXML
     private void LineOnMouseclicked() {
@@ -93,6 +137,7 @@ public class LayoutController {
     public void setStreets(List<Drawable> streets2) {
         this.streets.add(streets2.get(0));
         for (Drawable item : streets2) {
+            item.setTrafficControl(trafficSlider,selectedStreet);
             map.getChildren().addAll(item.getGui());
         }
 
@@ -131,6 +176,10 @@ public class LayoutController {
 
                 Platform.runLater(() -> {
                     //on time actions
+                    if(timeDisplay != null)
+                    {
+                        timeDisplay.setText(time.toString());
+                    }
                     for (Movable item : vehicles) {
                         //update vehicle position
 
@@ -153,7 +202,7 @@ public class LayoutController {
         this.startTime(1);
     }
 
-    public synchronized Vehicle getInitialPosition(Line line,int count,String id)
+    public synchronized Vehicle getInitialPosition(Line line, int count, String id)
     {
         Coordinate vehiclePosition = new Coordinate(line.getPoints().get(0).getCoordinate().getX(),line.getPoints().get(0).getCoordinate().getY());
         Line vehicleLine = new Line(line);
@@ -177,7 +226,7 @@ public class LayoutController {
             {
                 if(prevTime.compareTo(pointTime) == 0)
                 {
-                    System.out.println("yes");
+                    //System.out.println("yes");
                     return  new Vehicle(vehiclePosition,id,line,vehicleLine,count,streets);
                 }
 

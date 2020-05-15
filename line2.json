@@ -8,6 +8,7 @@
       },
       "zastavka": true,
       "streetId": "Riley Grange",
+      "stopId": "gate",
       "casOdjezdu": "06:00:01"
     },
     {
@@ -17,6 +18,7 @@
       },
       "zastavka": false,
       "streetId": "Tresillian Road",
+      "stopId": "",
       "casOdjezdu": "06:03:29"
     },
     {
@@ -26,6 +28,7 @@
       },
       "zastavka": true,
       "streetId": "Tresillian Road",
+      "stopId": "rational",
       "casOdjezdu": "06:04:56"
     },
     {
@@ -35,6 +38,7 @@
       },
       "zastavka": false,
       "streetId": "Atkinson Springs",
+      "stopId": "",
       "casOdjezdu": "06:08:06"
     },
     {
@@ -44,6 +48,7 @@
       },
       "zastavka": true,
       "streetId": "Atkinson Springs",
+      "stopId": "distant",
       "casOdjezdu": "06:08:37"
     },
     {
@@ -53,6 +58,7 @@
       },
       "zastavka": false,
       "streetId": "King Edward Willows",
+      "stopId": "",
       "casOdjezdu": "06:11:44"
     },
     {
@@ -62,6 +68,7 @@
       },
       "zastavka": true,
       "streetId": "King Edward Willows",
+      "stopId": "echo",
       "casOdjezdu": "06:13:14"
     },
     {
@@ -71,6 +78,7 @@
       },
       "zastavka": false,
       "streetId": "Railway Gardens",
+      "stopId": "",
       "casOdjezdu": "06:13:54"
     },
     {
@@ -80,6 +88,7 @@
       },
       "zastavka": true,
       "streetId": "Railway Gardens",
+      "stopId": "gregarious",
       "casOdjezdu": "06:15:57"
     },
     {
@@ -89,25 +98,8 @@
       },
       "zastavka": true,
       "streetId": "Railway Gardens",
+      "stopId": "soprano",
       "casOdjezdu": "06:16:21"
-    },
-    {
-      "coordinate": {
-        "x": 634.0,
-        "y": 456.0
-      },
-      "zastavka": false,
-      "streetId": "Andover Rise",
-      "casOdjezdu": "06:16:23"
-    },
-    {
-      "coordinate": {
-        "x": 705.028936809227,
-        "y": 342.69193413766163
-      },
-      "zastavka": true,
-      "streetId": "Andover Rise",
-      "casOdjezdu": "06:18:37"
     }
   ],
   "vehicles": [

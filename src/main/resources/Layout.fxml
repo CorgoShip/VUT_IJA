@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -12,18 +14,23 @@
    <right>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="speed" layoutX="37.0" layoutY="707.0" prefHeight="25.0" prefWidth="116.0" promptText="Rychlost simulace" />
+            <TextField fx:id="speed" layoutX="13.0" layoutY="707.0" prefHeight="25.0" prefWidth="140.0" promptText="Rychlost simulace" />
             <Button layoutX="153.0" layoutY="707.0" mnemonicParsing="false" onAction="#onSpeedChange" text="Set" />
             <ListView fx:id="lineList" layoutY="-1.0" onMouseClicked="#LineOnMouseclicked" prefHeight="205.0" prefWidth="200.0" />
-            <ListView fx:id="vehicleList" layoutY="227.0" onMouseClicked="#VehicleOnMouseclicked" prefHeight="200.0" prefWidth="200.0" />
-            <Pane fx:id="info" layoutY="448.0" prefHeight="110.0" prefWidth="200.0" />
+            <ListView fx:id="vehicleList" layoutY="204.0" onMouseClicked="#VehicleOnMouseclicked" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="infoList" layoutY="404.0" onMouseClicked="#infoOnMouseClick" prefHeight="200.0" prefWidth="200.0" />
+            <Slider fx:id="trafficSlider" layoutX="30.0" layoutY="663.0" onMouseReleased="#sliderMoved" showTickLabels="true" showTickMarks="true" />
+            <Label fx:id="selectedStreet" layoutX="11.0" layoutY="629.0" prefHeight="17.0" prefWidth="179.0" text="Select street to change traffic" />
          </children></AnchorPane>
    </right>
    <center>
       <ScrollPane pannable="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <content>
-            <Pane fx:id="map" onScroll="#onZoom" prefHeight="1000.0" prefWidth="1000.0" />
+            <Pane fx:id="map" onScroll="#onZoom" prefHeight="1000.0" prefWidth="596.0" />
          </content>
       </ScrollPane>
    </center>
+   <top>
+      <Label fx:id="timeDisplay" prefHeight="17.0" prefWidth="116.0" text="Label" BorderPane.alignment="CENTER" />
+   </top>
 </BorderPane>
