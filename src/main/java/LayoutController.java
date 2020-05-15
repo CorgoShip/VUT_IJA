@@ -24,7 +24,7 @@ public class LayoutController {
     private List<Line> lines = new ArrayList<>();
     private List<Movable> vehicles = new ArrayList<>();
     private Timer timer;
-    private LocalTime time = new Time(6, 0, 1).toLocalTime();
+    private LocalTime time = new Time(6, 15, 0).toLocalTime();
     private int rate = 1;
     private List<Movable> toRemove = new ArrayList<>();
 
@@ -65,10 +65,14 @@ public class LayoutController {
     }
 
     @FXML
-    private void onMouseclicked() {
+    private void VehicleOnMouseclicked(){
+
+    }
+
+    @FXML
+    private void LineOnMouseclicked() {
         vehicleList.getItems().clear();
         //viewlists
-        String lineId = lineList.getSelectionModel().getSelectedItem();
         for (Line line : lines) {
             if (line.getId() == lineList.getSelectionModel().getSelectedItem()) {
                 //TODO:zvyraznit ulice linky
