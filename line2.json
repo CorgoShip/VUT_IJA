@@ -17,7 +17,7 @@
       },
       "zastavka": false,
       "streetId": "Tresillian Road",
-      "casOdjezdu": "06:01:01"
+      "casOdjezdu": "06:03:29"
     },
     {
       "coordinate": {
@@ -26,7 +26,7 @@
       },
       "zastavka": true,
       "streetId": "Tresillian Road",
-      "casOdjezdu": "06:02:01"
+      "casOdjezdu": "06:04:56"
     },
     {
       "coordinate": {
@@ -35,7 +35,7 @@
       },
       "zastavka": false,
       "streetId": "Atkinson Springs",
-      "casOdjezdu": "06:03:01"
+      "casOdjezdu": "06:08:06"
     },
     {
       "coordinate": {
@@ -44,7 +44,7 @@
       },
       "zastavka": true,
       "streetId": "Atkinson Springs",
-      "casOdjezdu": "06:04:01"
+      "casOdjezdu": "06:08:37"
     },
     {
       "coordinate": {
@@ -53,7 +53,7 @@
       },
       "zastavka": false,
       "streetId": "King Edward Willows",
-      "casOdjezdu": "06:05:01"
+      "casOdjezdu": "06:11:44"
     },
     {
       "coordinate": {
@@ -62,7 +62,7 @@
       },
       "zastavka": true,
       "streetId": "King Edward Willows",
-      "casOdjezdu": "06:06:01"
+      "casOdjezdu": "06:13:14"
     },
     {
       "coordinate": {
@@ -71,7 +71,7 @@
       },
       "zastavka": false,
       "streetId": "Railway Gardens",
-      "casOdjezdu": "06:07:01"
+      "casOdjezdu": "06:13:54"
     },
     {
       "coordinate": {
@@ -80,7 +80,7 @@
       },
       "zastavka": true,
       "streetId": "Railway Gardens",
-      "casOdjezdu": "06:08:01"
+      "casOdjezdu": "06:15:57"
     },
     {
       "coordinate": {
@@ -89,7 +89,7 @@
       },
       "zastavka": true,
       "streetId": "Railway Gardens",
-      "casOdjezdu": "06:09:01"
+      "casOdjezdu": "06:16:21"
     },
     {
       "coordinate": {
@@ -98,7 +98,7 @@
       },
       "zastavka": false,
       "streetId": "Andover Rise",
-      "casOdjezdu": "06:10:01"
+      "casOdjezdu": "06:16:23"
     },
     {
       "coordinate": {
@@ -107,7 +107,7 @@
       },
       "zastavka": true,
       "streetId": "Andover Rise",
-      "casOdjezdu": "06:11:01"
+      "casOdjezdu": "06:18:37"
     }
   ],
   "vehicles": [

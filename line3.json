@@ -1,0 +1,89 @@
+{
+  "id": "line3",
+  "points": [
+    {
+      "coordinate": {
+        "x": 233.11293154464417,
+        "y": 598.7816239614205
+      },
+      "zastavka": true,
+      "streetId": "Atkinson Springs",
+      "casOdjezdu": "06:00:01"
+    },
+    {
+      "coordinate": {
+        "x": 203.0,
+        "y": 595.0
+      },
+      "zastavka": false,
+      "streetId": "Grantham Causeway",
+      "casOdjezdu": "06:00:32"
+    },
+    {
+      "coordinate": {
+        "x": 264.0067649836933,
+        "y": 411.97970504892004
+      },
+      "zastavka": true,
+      "streetId": "Grantham Causeway",
+      "casOdjezdu": "06:03:45"
+    },
+    {
+      "coordinate": {
+        "x": 275.0,
+        "y": 379.0
+      },
+      "zastavka": false,
+      "streetId": "Barker Wood",
+      "casOdjezdu": "06:04:20"
+    },
+    {
+      "coordinate": {
+        "x": 290.83698203308654,
+        "y": 364.9378521602766
+      },
+      "zastavka": true,
+      "streetId": "Barker Wood",
+      "casOdjezdu": "06:04:42"
+    },
+    {
+      "coordinate": {
+        "x": 302.9753600064946,
+        "y": 354.15980964940564
+      },
+      "zastavka": true,
+      "streetId": "Barker Wood",
+      "casOdjezdu": "06:04:59"
+    },
+    {
+      "coordinate": {
+        "x": 391.0,
+        "y": 276.0
+      },
+      "zastavka": false,
+      "streetId": "Lyndale Hawthorns",
+      "casOdjezdu": "06:06:57"
+    },
+    {
+      "coordinate": {
+        "x": 388.9195633316925,
+        "y": 255.40367698375525
+      },
+      "zastavka": false,
+      "streetId": "Lyndale Hawthorns",
+      "casOdjezdu": "06:07:18"
+    }
+  ],
+  "vehicles": [
+    "30",
+    "31",
+    "31",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39"
+  ]
+}

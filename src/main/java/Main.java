@@ -40,7 +40,17 @@ public class Main extends Application {
         //TODO: tady by asi bylo idelani kdyby to vracelo list linek
         Reader line1Reader = Files.newBufferedReader(Paths.get("line1.json"));
         Line line1 = gson.fromJson(line1Reader, Line.class);
-        controller.setLines(Arrays.asList(line1));
+        Reader line2Reader = Files.newBufferedReader(Paths.get("line2.json"));
+        Line line2 = gson.fromJson(line2Reader, Line.class);
+        Reader line3Reader = Files.newBufferedReader(Paths.get("line3.json"));
+        Line line3 = gson.fromJson(line3Reader, Line.class);
+
+        ArrayList<Line> lines = new ArrayList<Line>();
+        lines.add(line1);
+        lines.add(line2);
+        lines.add(line3);
+
+        controller.setLines(lines);
 
 
         //adding streets to scene
