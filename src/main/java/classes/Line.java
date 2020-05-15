@@ -2,6 +2,9 @@ package classes;
 
 import java.util.ArrayList;
 
+import java.util.*;
+
+
 public class Line {
     private String id;
     private ArrayList<Point> points = new ArrayList<Point>();
@@ -28,4 +31,14 @@ public class Line {
     {
         vehicles.add(id);
     }
+
+    public Line(Line line){
+        this.id = line.id;
+        this.vehicles = line.vehicles;
+        for (Point point: line.getPoints())
+        {
+            this.points.add(new Point(point));
+        }
+    }
+
 }

@@ -36,4 +36,12 @@ public class Point {
         this.streetId = streetId;
         this.casOdjezdu = casOdjezdu;
     }
+
+    public Point(Point point) {
+        this.coordinate = new Coordinate(point.getCoordinate());
+        this.zastavka = point.zastavka;
+        this.streetId = point.streetId;
+        this.casOdjezdu = point.casOdjezdu;
+    }
+
 }

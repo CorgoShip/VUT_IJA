@@ -10,6 +10,12 @@ public class Coordinate {
         y = y0;
     }
 
+    public Coordinate(Coordinate c){
+        x = c.x;
+        y = c.y;
+    }
+
+
     public static Coordinate create(double x, double y){
         if(x >= 0 && y >= 0){
             Coordinate temp = new Coordinate(x,y);

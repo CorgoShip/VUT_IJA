@@ -16,9 +16,9 @@ public class Vehicle implements Movable{
     private Line line;
     private Line currentLine;
     private double speed = 1;
-    private double timeoffset;
+    private int timeoffset;
 
-    public Vehicle(Coordinate p,String id,Line line,double to)
+    public Vehicle(Coordinate p,String id,Line line, int to )
     {
         this.timeoffset = to;
         this.position = p;
@@ -37,25 +37,31 @@ public class Vehicle implements Movable{
         return this.gui;
     }
 
+    public String getId() {
+        return id;
+    }
+
     @Override
     public synchronized boolean move(LocalTime time,List<Drawable> streets) {
 /**
-        if(this.position == null)
-        {
-            LocalTime firstPointTime = LocalTime.parse(this.line.getPoints().get(0).getCasOdjezdu());
-            if(time.compareTo(firstPointTime) == 0)
-            {
-                this.position = new Coordinate(line.getPoints().get(0).getCoordinate().getX(),line.getPoints().get(0).getCoordinate().getY());
-            }
-            return true;
-        }
-*/
+ if(this.position == null)
+ {
+ LocalTime firstPointTime = LocalTime.parse(this.line.getPoints().get(0).getCasOdjezdu());
+ if(time.compareTo(firstPointTime) == 0)
+ {
+ this.position = new Coordinate(line.getPoints().get(0).getCoordinate().getX(),line.getPoints().get(0).getCoordinate().getY());
+ }
+ return true;
+ }
+ */
         //zjistim na ktere jsem ulici
         Drawable street = this.getStreet(streets);
 
         //ziskam bod ke kteremu mam prave jet
         if(currentLine.getPoints().isEmpty())
         {
+            //this.position.setX(0);
+            //this.position.setY(0);
             return false;
         }
 
@@ -92,20 +98,20 @@ public class Vehicle implements Movable{
 
         //vzdalenost od bodu je vetsi nez rychlost za jednotku casu
         else
-         {
-             //spocitam cast vzdalenosti, kterou chci ujet
-             //TODO: 5 se prepise rychlosti dopravni situaci ulice, na ktere je vozidlo
-             double part = (speed / lenght);
+        {
+            //spocitam cast vzdalenosti, kterou chci ujet
+            //TODO: 5 se prepise rychlosti dopravni situaci ulice, na ktere je vozidlo
+            double part = (speed / lenght);
 
-             this.position.setX(this.position.getX() + dx * part);
-             this.position.setY(this.position.getY() + dy * part);
+            this.position.setX(this.position.getX() + dx * part);
+            this.position.setY(this.position.getY() + dy * part);
 
-             for (Shape item: gui)
-             {
-                 item.setTranslateX(dx * part + item.getTranslateX());
-                 item.setTranslateY(dy * part + item.getTranslateY());
-             }
-         }
+            for (Shape item: gui)
+            {
+                item.setTranslateX(dx * part + item.getTranslateX());
+                item.setTranslateY(dy * part + item.getTranslateY());
+            }
+        }
 
         //System.out.println(nextpoint.getCoordinate().getX());
         //System.out.println(nextpoint.getCoordinate().getY());
@@ -151,3 +157,4 @@ public class Vehicle implements Movable{
 
 
 }
+

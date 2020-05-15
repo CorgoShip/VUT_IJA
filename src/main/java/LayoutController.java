@@ -24,7 +24,7 @@ public class LayoutController {
     private List<Line> lines = new ArrayList<>();
     private List<Movable> vehicles = new ArrayList<>();
     private Timer timer;
-    private LocalTime time = new Time(6, 15, 0).toLocalTime();
+    private LocalTime time = new Time(6, 0, 1).toLocalTime();
     private int rate = 1;
     private List<Movable> toRemove = new ArrayList<>();
 
@@ -97,9 +97,9 @@ public class LayoutController {
             int count = 0;
             for (String vehicleID : line.getVehicles()) {
                 //TODO:nastavit souradnice podle casu na spravnou pocatecni pozici
-                //System.out.println(getInitialPosition(line).getX());
-                //System.out.println(getInitialPosition(line).getY());
-                addVehicle(new Vehicle(getInitialPosition(line), vehicleID, line));
+
+                addVehicle(getInitialPosition(line,count,vehicleID));
+                count++;
             }
         }
     }
@@ -117,18 +117,16 @@ public class LayoutController {
                 time = time.plusSeconds(rate);
                 //System.out.println(time);
 
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        //on time actions
-                        for (Movable item : vehicles) {
-                            //update vehicle position
-                            if (item.move(time, streets) == false) {
-                                map.getChildren().remove(this);
-                                vehicles.remove(this);
-                            }
-                            //System.out.println(item);
+                Platform.runLater(() -> {
+                    //on time actions
+                    for (Movable item : vehicles) {
+                        //update vehicle position
+
+                        if (item.move(time, streets) == false) {
+                            map.getChildren().remove(item);
+                            //vehicles.remove(item);
                         }
+                        //System.out.println(item);
                     }
                 });
             }
@@ -151,55 +149,46 @@ public class LayoutController {
         this.startTime(1);
     }
 
-    public Coordinate getInitialPosition(Line line)
+    public synchronized Vehicle getInitialPosition(Line line,int count,String id)
     {
-        Point prev = null;
-        LocalTime prevTime = null;
+        Coordinate vehiclePosition = new Coordinate(0,0);
+        Line vehicleLine = new Line(line);
+
+        Point prev = line.getPoints().get(0);
+        LocalTime prevTime = LocalTime.parse(line.getPoints().get(0).getCasOdjezdu()).plusMinutes(count);
         for (Point point : line.getPoints())
         {
-            System.out.println(point.getCasOdjezdu());
-            /**
+
             LocalTime pointTime = LocalTime.parse(point.getCasOdjezdu());
+            pointTime = pointTime.plusMinutes(count);
 
             if(time.compareTo(pointTime) == 0 )
             {
-                System.out.println(1);
-                return new Coordinate(point.getCoordinate().getX(),point.getCoordinate().getY());
+                vehiclePosition.setX(point.getCoordinate().getX());
+                vehiclePosition.setY(point.getCoordinate().getY());
+                break;
             }
 
             if(time.compareTo(pointTime) < 0  )
             {
-                System.out.println(prev);
-                System.out.println(prevTime);
-                if (prevTime == null)
-                {
-                    System.out.println(2);
-                    return new Coordinate(point.getCoordinate().getX(),point.getCoordinate().getY());
-                }
-                prev = point;
-                prevTime = pointTime;
-                /**
-                double timeDifference = pointTime.getHour()*3600 + pointTime.getMinute()*60 + pointTime.getSecond() - prevTime.getHour()*3600 - prevTime.getMinute()*60 - prevTime.getSecond();
+                 double timeDifference = pointTime.getHour()*3600 + pointTime.getMinute()*60 + pointTime.getSecond() - prevTime.getHour()*3600 - prevTime.getMinute()*60 - prevTime.getSecond();
 
-                double timeTraveled = time.getHour()*3600 + time.getMinute()*60 + time.getSecond() - prevTime.getHour()*3600 - prevTime.getMinute()*60 - prevTime.getSecond();
+                 double timeTraveled = time.getHour()*3600 + time.getMinute()*60 + time.getSecond() - prevTime.getHour()*3600 - prevTime.getMinute()*60 - prevTime.getSecond();
 
-                double dx = point.getCoordinate().getX() - prev.getCoordinate().getX();
-                double dy = point.getCoordinate().getY() - prev.getCoordinate().getY();
-                double part = timeTraveled/timeDifference;
+                 double dx = point.getCoordinate().getX() - prev.getCoordinate().getX();
+                 double dy = point.getCoordinate().getY() - prev.getCoordinate().getY();
+                 double part = timeTraveled/timeDifference;
 
-                return new Coordinate(prev.getCoordinate().getX() + dx*part,prev.getCoordinate().getY()+dy*part);
-<<<<<<< HEAD
-
+                 vehiclePosition.setX(prev.getCoordinate().getX() + dx*part);
+                 vehiclePosition.setY(prev.getCoordinate().getY()+dy*part);
+                 break;
             }
-            */
-=======
-                 */
-            }
->>>>>>> 7119b71290726bdbb174f7b19b76dbddfd248f6e
-            //prev = point;
-            //prevTime = pointTime;
+            prev = point;
+            prevTime = pointTime;
+            //TODO remove point from line
+            vehicleLine.getPoints().remove(0);
         }
-        //return line.getPoints().get(0).getCoordinate();
-        return  new Coordinate(1,2);
+
+        return  new Vehicle(vehiclePosition,id,vehicleLine,count);
     }
 }
