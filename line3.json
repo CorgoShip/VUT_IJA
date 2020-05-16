@@ -17,7 +17,7 @@
         "y": 595.0
       },
       "zastavka": false,
-      "streetId": "Grantham Causeway",
+      "streetId": "Atkinson Springs",
       "stopId": "",
       "casOdjezdu": "06:00:32"
     },
@@ -37,7 +37,7 @@
         "y": 379.0
       },
       "zastavka": false,
-      "streetId": "Barker Wood",
+      "streetId": "Grantham Causeway",
       "stopId": "",
       "casOdjezdu": "06:04:20"
     },
@@ -67,7 +67,7 @@
         "y": 276.0
       },
       "zastavka": false,
-      "streetId": "Lyndale Hawthorns",
+      "streetId": "Barker Wood",
       "stopId": "",
       "casOdjezdu": "06:06:57"
     },
@@ -87,7 +87,7 @@
         "y": 177
       },
       "zastavka": false,
-      "streetId": "Holt Wharf",
+      "streetId": "Lyndale Hawthorns",
       "stopId": "",
       "casOdjezdu": "06:08:42"
     },
@@ -107,7 +107,7 @@
         "y": 146
       },
       "zastavka": false,
-      "streetId": "Atkinson Warren",
+      "streetId": "Holt Wharf",
       "stopId": "",
       "casOdjezdu": "06:12:37"
     },

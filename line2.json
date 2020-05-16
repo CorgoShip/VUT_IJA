@@ -17,7 +17,7 @@
         "y": 360.0
       },
       "zastavka": false,
-      "streetId": "Tresillian Road",
+      "streetId": "Riley Grange",
       "stopId": "",
       "casOdjezdu": "06:03:29"
     },
@@ -37,7 +37,7 @@
         "y": 595.0
       },
       "zastavka": false,
-      "streetId": "Atkinson Springs",
+      "streetId": "Tresillian Road",
       "stopId": "",
       "casOdjezdu": "06:08:06"
     },
@@ -57,7 +57,7 @@
         "y": 622.0
       },
       "zastavka": false,
-      "streetId": "King Edward Willows",
+      "streetId": "Atkinson Springs",
       "stopId": "",
       "casOdjezdu": "06:11:44"
     },
@@ -77,7 +77,7 @@
         "y": 527.0
       },
       "zastavka": false,
-      "streetId": "Railway Gardens",
+      "streetId": "King Edward Willows",
       "stopId": "",
       "casOdjezdu": "06:13:54"
     },
