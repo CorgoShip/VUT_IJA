@@ -1,3 +1,10 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ * Rozhrani pro Tridu Street
+ */
+
 package classes;
 
 import javafx.scene.control.Label;

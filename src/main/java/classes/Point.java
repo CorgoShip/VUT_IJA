@@ -1,3 +1,12 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ * Trida reprezentuje jednu pozici na trase vozu.
+ * Ma souradnice, cas odjezdu, nazev ulice a nazev zastavky (pokud existuje).
+ * Obaseuje informaci, zda se jedna o zastavku, ci krizovatku.
+ */
+
 package classes;
 
 import java.sql.Time;

@@ -1,3 +1,13 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ * Trida reprezentuje ulici. Ma nazev, seznam zastavek, ktere na ni lezi,
+ * Souradnice zacatku a konce a hodnotu dopravy (ta je vyjadrena v procentech,
+ * 0 znamena plna rychlost vozidel, 100 znamena, ze vozidla stoji). Obsahuje
+ * jeste prvky pro UI.
+ */
+
 package classes;
 
 import javafx.event.EventHandler;

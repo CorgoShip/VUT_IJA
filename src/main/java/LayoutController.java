@@ -1,3 +1,10 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ * Trida resi celou logiku aplikace, od zoomovani po pohyb vozidel
+ */
+
 import classes.*;
 import classes.Point;
 import javafx.application.Platform;

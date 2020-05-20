@@ -1,3 +1,13 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ * Trida reprezentuje vozidlo jezdici na urcite trase.
+ * Ma souradnice, kde se prave nachazi, nazev, trasu, na ktere jezdi, trasu, ktera zbyva do konce,
+ * rychlost (defaultne nastavena na 1), casovy interval oproti drivejsimu vozu na stejne trase.
+ * Navic obsahuje prvky potrebne pro UI.
+ */
+
 package classes;
 
 import javafx.application.Platform;
@@ -21,7 +31,7 @@ public class Vehicle implements Movable {
     private transient List<Shape> gui;
     private Line line;
     private Line currentLine;
-    private double speed = 1;
+    private double speed = 1; // tady se da upravit rychlost vsech vozidel
     private int timeoffset;
     private List<Drawable> streets = new ArrayList<Drawable>();
     private boolean indicated = true;

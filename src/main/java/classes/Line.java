@@ -1,3 +1,11 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ * Trida reprezentuje jednu trasu (linku) vozidel na mape. Je nacitana ze souboru.
+ * Ma nazev, list vozidel, ktera na ni jezdi a list zastavek.
+ */
+
 package classes;
 
 import java.util.ArrayList;

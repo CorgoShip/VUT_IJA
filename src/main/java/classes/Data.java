@@ -1,3 +1,10 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ * Trida data reprezentuje nacitanou mapu. Obsahuje list ulic a zastavek.
+ */
+
 package classes;
 
 import java.util.ArrayList;

@@ -1,3 +1,10 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ * Trida se stara o spusteni aplikace a nacteni dat
+ */
+
 import classes.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -24,7 +31,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        Reader reader = Files.newBufferedReader(Paths.get("convertcsv.json"));
+        Reader reader = Files.newBufferedReader(Paths.get("data/convertcsv.json"));
         Gson gson = new GsonBuilder().setDateFormat(0).create();
         Data data = gson.fromJson(reader, Data.class);
         //data.getStreets().forEach(System.out::println);
@@ -38,11 +45,11 @@ public class Main extends Application {
 
         //loading lines
         //TODO: tady by asi bylo idelani kdyby to vracelo list linek
-        Reader line1Reader = Files.newBufferedReader(Paths.get("line1.json"));
+        Reader line1Reader = Files.newBufferedReader(Paths.get("data/line1.json"));
         Line line1 = gson.fromJson(line1Reader, Line.class);
-        Reader line2Reader = Files.newBufferedReader(Paths.get("line2.json"));
+        Reader line2Reader = Files.newBufferedReader(Paths.get("data/line2.json"));
         Line line2 = gson.fromJson(line2Reader, Line.class);
-        Reader line3Reader = Files.newBufferedReader(Paths.get("line3.json"));
+        Reader line3Reader = Files.newBufferedReader(Paths.get("data/line3.json"));
         Line line3 = gson.fromJson(line3Reader, Line.class);
 
         ArrayList<Line> lines = new ArrayList<Line>();

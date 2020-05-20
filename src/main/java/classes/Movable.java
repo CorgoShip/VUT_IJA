@@ -1,3 +1,10 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ * Rozhrani pro tridu Vehicle
+ */
+
 package classes;
 
 import javafx.scene.shape.Shape;

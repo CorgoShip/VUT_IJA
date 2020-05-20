@@ -1,3 +1,11 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ * Trida reprezentujici zastavku.
+ * Ma nazev a souradnice.
+ */
+
 package classes;
 
 import com.google.gson.annotations.SerializedName;

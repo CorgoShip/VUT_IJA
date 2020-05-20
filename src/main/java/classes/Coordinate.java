@@ -1,3 +1,11 @@
+/**
+ * Autori: Zbynek Lamacka xlamac01
+ *         Simon  Pomykal xpomyk04
+ *
+ *  Tato trida reprezentaci bodu. Je trvorena dvema atributy typu double (souradcnice x, y).
+ */
+
+
 package classes;
 
 public class Coordinate {
