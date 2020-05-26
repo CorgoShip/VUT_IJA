@@ -35,3 +35,8 @@ Navrhněte a implementujte aplikaci pro zobrazení linek hromadné dopravy a sle
 ## Součást odevzdání
 * Připravte mapový podklad obsahující alespoň 20 ulic.
 * Připravte předem alespoň 3 linky, každá má alespoň 10 spojů.
+
+## Autori:
+- Lamačka Zbyněk
+- Pomykal Šimon
+
